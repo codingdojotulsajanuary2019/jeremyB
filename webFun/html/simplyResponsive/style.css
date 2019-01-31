@@ -1,0 +1,53 @@
+*{
+    margin: 0px auto;
+    padding: 0px;
+}
+body div{
+    border: 1px solid orange;
+}
+div.header{
+    background-color: gray;
+    margin: 10px;
+}
+div.header h1{
+    font-weight: normal;
+}
+div.body{
+    background-color: lightgray;
+    margin: 10px;
+}
+div.footer{
+    background-color: yellow;
+    margin: 10px;
+}
+div.footer span.bold{
+    font-weight: bold;
+}
+@media only screen and (max-width:480px){
+    div.med{
+        display: none;
+    }
+    div.large{
+        display: none;
+    }
+}
+@media only screen and (min-width:481px){
+    div.small{
+        display: none;
+    }
+    div.large{
+        display: none;
+    }
+}
+@media only screen and (min-width:1023px){
+    div.med{
+        display: none;
+    }
+    div.small{
+        display: none;
+    }
+    div.large{
+        width: 98%;
+        display: block;
+    }
+}

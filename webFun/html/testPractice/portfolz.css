@@ -1,0 +1,156 @@
+*{ 
+    margin: 0px auto;
+    padding: 0px;
+}
+.container{
+    width: 940px;
+    height: 1000px;
+    /* background-image: url(./portfolioImages/portfolio_assignment.png);
+    background-size:contain;
+    background-repeat: no-repeat; */
+    font-family: arial;
+}
+.header{
+    width: 100%;
+    height: 66px;
+    background-color: #e6e6e6;
+
+}
+    .header h1{
+        font-family:"Comic Sans MS";
+        display: inline-block;
+        margin-right: 330px;
+        margin-top: 15px;
+        margin-left: 25px;
+    }
+    .header h2{
+        text-align: right;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 15px;
+    }
+.main{
+    background-image: radial-gradient(circle,#a3758d,#2e1f27);
+    width: 100%;
+    height: 866px;
+}
+    .main img{
+        /* opacity: .5;
+        background-color: blue; */
+        width: 396px;
+        height: 262px;
+        display: inline-block;
+        margin: 19px 0px 0px 24px;
+        border: 3px gray solid;
+        display: inline-block;
+    }
+    .box{
+        background-image: linear-gradient(-90deg,#d6b8e0, white);
+        width: 450px;
+        height: 265px;
+        display: inline-block;
+        vertical-align: top;
+        margin: 19px 21px 0px 19px; 
+    }
+.grayBar{
+    background-image: linear-gradient(#bfbfbf,#808080,#bfbfbf);
+    color: white;
+}
+        div.box h3{
+            display: inline-block;
+            vertical-align:top;
+            width: 440px;
+            height: 30px;
+            padding-left: 10px;
+            padding-top: 10px;
+            margin-bottom: 5px;
+        }
+        div.box p{
+            display: inline-block;
+            margin-bottom: 15px;
+            margin-left: 8px;
+        }
+        div.box a{
+            color: black;
+            margin-left: 8px;
+        }
+    .subcontent{
+        background-image: linear-gradient(-90deg,#d6b8e0, white);
+        width: 281px;
+        height: 535px;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 20px;
+        margin-left: 22px;
+    }
+        .subcontent h3{
+            height: 30px;
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+        .subcontent img.lamode{
+            width: 281px;
+            height: auto;
+            display: inline-block;
+            vertical-align: top;
+            margin: 0px 0px 10px 0px;
+            border: 0px;
+        }
+        .subcontent p{
+            font-size: 12px;
+            margin-bottom: 60px;
+        }
+        .subcontent img{
+            width: 40px;
+            height: auto;
+            display: inline-block;
+            vertical-align: top;
+            margin: 5px 0px 0px 5px;
+            border: 0px;
+        }
+        .subcontent a{
+            background-color: #006666;
+            padding: 4px;
+            border-radius: 4px;
+            border: 1px black solid;
+            color: white;
+            display: block;
+            width: 65px;
+            margin-top: 17px;
+            text-decoration: none;
+            box-shadow: black 2px 2px 1px;
+        }
+        .subcontent p.familyText{
+            margin-bottom: 45px;
+        }
+        .subcontent a.familyButton{
+            width: 115px;
+        }
+        .subcontent p.fiveText{
+            margin-bottom: 15px;
+        }
+        .subcontent a.fiveButton{
+            width: 75px;
+        }
+.footer{
+    /* opacity: .5;
+    background-color: purple; */
+    width: 100%;
+    height: 65px;
+    background-color: #e6e6e6;
+}
+    .footer p{
+        padding-top: 5px;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .footer img{
+        width: 17px;
+    }
+    .footer a{
+        color: black;
+        font-style: italic;
+    }
+    .footer img.bumper{
+        margin-left: 281px;
+    }

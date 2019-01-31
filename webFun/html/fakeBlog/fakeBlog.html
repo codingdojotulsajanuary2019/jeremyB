@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Penguins are cool</title>
+        <meta name="description" content="This is a site completely made up for an assignment so I decided to make it about penguins as they were once my favorite animals.">
+    </head>
+    <body>
+
+        <!-- Introduction stuff -->
+        <h1>Listen up, penguins are the best.</h1>
+
+        <img src="https://www.thehoopsnews.com/wp-content/uploads/2014/07/penguin-southern-hemisphere.jpg" alt="There should be a penguin here, I'm sorry for your loss.">
+
+        <p>I think it would be insane if you didn't already agree with me given the adorable image above. However, <a href="https://en.wikipedia.org/wiki/Penguin">here is the wikipedia</a> if you need more convincing.</p>
+        <br>
+
+        <!-- List -->
+        <div style="background-color:lightblue">
+            <h3>List of the best animals</h3>
+            <ul>
+                <li>Penguins</li>
+                <li>Slightly smaller penguins</li>
+                <li>My dogs.</li>
+            </ul>
+        </div>
+
+        <!-- Table -->
+        <div style="background-color:lightsalmon">
+            <table>
+                <tr>
+                    <th>Type of Penguin</th>
+                    <th>Location Found</th>
+                    <th>Coolness Score</th>
+                </tr>
+                <tr>
+                    <td>Emperor Penguin</td>
+                    <td>Antartica</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>Crested Penguins</td>
+                    <td>New Zealand</td>
+                    <td>Definitely a 7</td>
+                </tr>
+                <tr>
+                    <td>Little Penguin</td>
+                    <td>Southern Australia</td>
+                    <td>Yes this is real, yes this is a 10</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- The questionnaire -->
+        <form>
+            <h3>Answer some questions</h3>
+
+            <label for="penguins">What was this blog about?</label>
+            <input type="text" id="penguins" name="penguins">
+
+            <p>Do you like penguins?</p>
+            <label for="yes">Yes</label>
+            <input type="radio" name="yes" id="likability">
+
+            <label for="no">Yes, but not as much as you</label>
+            <input type="radio" name="no" id="likability">
+
+            <p>Which of these penguins should not go extinct?</p>
+
+            <input type="checkbox" id="Emperor" name="Emperor">
+            <label for="Emperor">Emperor</label>
+
+            <input type="checkbox" id="Crested" name="Crested">
+            <label for="Crested">Crested</label>
+
+            <input type="checkbox" id="Little" name="Little">
+            <label for="Little">Little</label>
+
+            <input type="submit" value="Enough of this sillyness">
+        </form>
+
+    </body>
+</html>
