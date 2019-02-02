@@ -1,8 +1,19 @@
+@link-color: red;
+@property: color;
+
+
 .container{
-    background-color: blue;
+    background-@{property}: blue;
     width: 100%;
     height: 100%;
-    .h1{
-        background-color: lightcoral;
-    }
 }
+	.header{
+	background-@{property}: green;
+	}    
+		li{
+		@{property}: yellowgreen;
+		}
+			a{
+			@{property}: @link-color;
+			}
+        

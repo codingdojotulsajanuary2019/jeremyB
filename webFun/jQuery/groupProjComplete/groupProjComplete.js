@@ -22,12 +22,6 @@ $(document).ready(function(){
         });
     });
 
-    $('button.after').click(function(){
-        console.log("button press")
-        $('p.after').after("add more text ")
-            console.log("after");
-    });
-
     $('button.attr').click(function(){
         console.log("button press")
         $('p.attr').attr("href", "background-color:red")
@@ -59,6 +53,45 @@ $(document).ready(function(){
         $('p.fade').fadeOut()
             console.log('fade out');
     });
+    $('button.adClas').click(function(){
+        console.log("button press")
+        $('p.turnRed').addClass('red')
+            console.log('fade out');
+    });
+
+    $('button.after').click(function(){
+        console.log("button press")
+        $('p.after').after("add more text ")
+            console.log("after");
+    });
+
+    $('button.before').click(function(){
+        console.log("button press")
+        $('p.before').before("add more text ")
+            console.log("before");
+    });
+
+    $('button.val').click(function(){
+        console.log("button press")
+
+        // var text = $(this).text();
+        var valValues = $('#single').val();
+        $('p.val').html("<b>Your have decided to kill all: </b>" + valValues);
+            console.log("val");
+            console.log(valValues);
+    });
+
+    $('button.html').click(function(){
+        console.log("button press")
+        $('p.html').html("<h1>change the html</h1>")
+            console.log("html");
+    });
+
+    $('button.text').click(function(){
+        console.log("button press")
+        $('p.text').text("<h1>change the text</h1> (notice the html tags)")
+            console.log("text");
+    });
 
 });
 
@@ -66,13 +99,7 @@ $(document).ready(function(){
 // $('document').ready(function(){
 //     alert("jQuery Started");
 
-//     $('.show').hide();
-//     $('hide').show();
-
-//     $('button.togglebtn').click(function()
-//     {
-//         console.log("BUTTON CLICKED")
-//         $('.hide').toggle();
+//   
 
 //     });
 
@@ -102,12 +129,6 @@ $(document).ready(function(){
 //     $("h1").click(function(){
 //         $(this).addClass("red");
 //     });
-//     $(".body").click(function(){
-//         $(".body p").fadeIn("slow",function(){
-//         });
-//     });
-//     $("p").click(function(){
-//          $(this).fadeOut("fast");
 //     });
 //     $("button").click(function(){
 //         $(".para").append("<p>Answers answers answers answers...............</p><hr>")

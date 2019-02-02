@@ -1,0 +1,12 @@
+INSERT INTO tweets
+VALUES (13, 'Im bad at basketball', '5', '2018-02-01 00:00:01', '2019-02-01 00:00:01');
+
+SELECT * FROM tweets
+JOIN follows ON follower_id = tweets.user_id;
+
+UPDATE tweets
+SET tweet = "I'm good at basketball"
+Where id =13;
+
+DELETE FROM tweets where id = 13;
+
