@@ -1,0 +1,42 @@
+(py3Env) Jeremys-MacBook-Pro:environments JB$ clear
+Clears my terminal browser so I can see more easily.
+
+(py3Env) Jeremys-MacBook-Pro:environments JB$ pip3 install Django==1.11.9
+Installs Django...
+
+(py3Env) Jeremys-MacBook-Pro:environments JB$ pip3 list
+Lists installed packages.
+
+
+(py3Env) Jeremys-MacBook-Pro:environments JB$ deactivate
+Deactivates the virtual environment
+
+Jeremys-MacBook-Pro:environments JB$ pip3 list
+Lists installed packages, this time not in the running virtual environment.
+
+Jeremys-MacBook-Pro:environments JB$ source py3Env/bin/activate
+Reactivates the virual environment
+
+(py3Env) Jeremys-MacBook-Pro:environments JB$ pip3 install Django==1.11.9
+Says Django is already installed because it's already isntalled.
+
+(py3Env) Jeremys-MacBook-Pro:environments JB$ pip3 freeze
+Shows installed packages in requirements format.
+
+(py3Env) Jeremys-MacBook-Pro:environments JB$ cd ~/Desktop/
+Navigate to Desktop
+
+(py3Env) Jeremys-MacBook-Pro:Desktop JB$ pip3 freeze > requirements.txt
+Create a file of the output of the freeze command.
+
+(py3Env) Jeremys-MacBook-Pro:Desktop JB$ ls 
+Shows me the file I created exists.
+
+(py3Env) Jeremys-MacBook-Pro:Desktop JB$ pip3 uninstall Django
+Uninstalled Django
+
+(py3Env) Jeremys-MacBook-Pro:Desktop JB$ pip3 show Django
+Shows you that Django is uninstalled
+
+(py3Env) Jeremys-MacBook-Pro:Desktop JB$ pip3 search Flask
+Shows all the Flask files.

@@ -1,0 +1,19 @@
+1)
+SELECT MONTHNAME(charged_datetime), SUM(amount) as total_amount
+FROM billing
+WHERE charged_datetime >= '2012/03/01' AND charged_datetime < '2012/04/01';
+
+2)
+SELECT SUM(amount) as revenue
+FROM billing
+WHERE client_id = 2;
+
+3)
+SELECT domain_name as total
+FROM sites
+WHERE client_id = 10;
+
+4)
+
+
+5)
