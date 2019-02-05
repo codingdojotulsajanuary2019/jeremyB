@@ -86,6 +86,23 @@ def ultAnal(x):
     analysis["length"] = length
     return analysis
 
+def ultAnal2(x):
+    total = sumTotal(x)
+    avg = average(x)
+    minVal = minimum(x)
+    maxVal = maximum(x)
+    length = len(x)
+    analysis = {
+        "sumTotal": total,
+        "average": avg,
+        "minimum": minVal,
+        "maximum": maxVal,
+        "length": length
+    }
+    return analysis
+
+print(ultAnal2([1,3,4,6]))
+
 def reverseList(x):
     temp = 0
     for i in range(int(len(x)/2)):
