@@ -39,7 +39,7 @@ class User:
         self.account.balance -= amount
         other_user.account.balance += amount
 
-jeremy = User("Jeremy Benedik", "jeremy@python.com")
+jeremy = User("Jeremy Benedik", "jeremy@python.com", )
 jeremy.make_deposit(10)
 jeremy.make_deposit(70)
 jeremy.make_withdrawal(70)
