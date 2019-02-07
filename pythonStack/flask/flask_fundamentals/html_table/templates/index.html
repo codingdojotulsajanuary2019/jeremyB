@@ -6,49 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='my_style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 
 
 </head>
 <body>
-    {{ table }}
+    <div class="container">
         <table class="table">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">#</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
                     <th scope="col">Full Name</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>{{ first1 }}</td>
-                    <td>{{ last1 }}</td>
-                    <td>{{ full1 }}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>{{ first2 }}</td>
-                    <td>{{ last2 }}</td>
-                    <td>{{ full2 }}</td>>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>{{ first3 }}</td>
-                    <td>{{ last3 }}</td>
-                    <td>{{ full3 }}</td>>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>{{ first4 }}</td>
-                    <td>{{ last4 }}</td>
-                    <td>{{ full4 }}</td>>
-                    </tr>
+
+                    {% for individual in users %}
+                        <tr>
+                            <td>{{ individual['first_name'] }}</td>
+                            <td>{{ individual['last_name'] }}</td>
+                            <td>{{ individual['first_name']}} {{ individual['last_name'] }}</td>
+                        </tr>
+                    {% endfor %}
+
                 </tbody>
-              </table>
-              
+        </table>
+    </div>          
 
 </body>
 </html>

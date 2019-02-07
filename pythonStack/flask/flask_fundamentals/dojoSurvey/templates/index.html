@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" style="padding: 50px 200px 50px 50px">
+        <form>
+            <div class="form-group row">
+                <label for="yourName" class="col-sm-2 col-form-label">Your Name</label>
+                <div class="col-sm-10">
+                <input type="text" name="name" class="form-control" id="name_input" placeholder="I promise not to sell your data to the Russians">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="favColor" class="col-sm-2 col-form-label">Favorite color</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="favColor" name="favColor">
+                        <option>Green</option>
+                        <option>Red</option>
+                        <option>Yellow</option>
+                        <option>Purple</option>
+                        <option>Ahhhhhh</option>
+                    </select>
+                </div>
+            </div>
+            <fieldset class="form-group">
+                <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Favorite word</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="favWord" id="wordRadio1" value="option1" checked>
+                    <label class="form-check-label" for="wordRadio1">
+                        Coding
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="favWord" id="wordRadio2" value="option2">
+                    <label class="form-check-label" for="wordRadio2">
+                        Dojo
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="favWord" id="wordRadio3" value="option3">
+                    <label class="form-check-label" for="wordRadio3">
+                        Supercalifragilisticexpialidocious
+                    </label>
+                    </div>
+                </div>
+                </div>
+            </fieldset>
+            <div class="form-group row">
+                <div class="col-sm-2">Checkbox</div>
+                <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                    Example checkbox
+                    </label>
+                </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Give me all your info</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
