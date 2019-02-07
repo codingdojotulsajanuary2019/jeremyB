@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Checkerboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='my_style.css') }}">
+    <style>
+        div.square{
+            background-color: {{ color1 }};
+        }
+        div.row:nth-child(2n) div.square:nth-child(2n+1){
+            background-color: {{ color2 }};
+        }
+        div.row:nth-child(2n+1) div.square:nth-child(2n){
+            background-color: {{ color2 }};
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="board">
+            {% for x in range(0,rows|default(8)): %}
+            <div class="row">
+                {% for x in range(0,cols|default(8)): %}
+                <div class="square"></div>
+                {% endfor %} 
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+</body>
+</html>

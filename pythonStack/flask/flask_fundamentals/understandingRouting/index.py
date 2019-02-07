@@ -20,13 +20,13 @@ def repeat(num, words):
     print("num: "+num+"words: "+words)
     return words * repeater
 
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def catch_all(path):
-    return "Sorry! No response. Try again."
+# @app.route('/', defaults={'path': ''})
+# @app.route('/<path:path>')
+# def catch_all(path):
+#     return "Sorry! No response. Try again."
 
 @app.errorhandler(404)
-def page_not_found():
+def page_not_found(e):
     return "Sorry! No response. Try again."
 
 

@@ -1,0 +1,24 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* border: 1px pink solid; */
+    }
+div.board{
+    margin: 0px auto;
+    border: 3px black solid;
+    display: inline-block;
+    padding: 2px;
+}
+.square{
+    display: inline-block;
+    background-color: red;
+    height: 30px;
+    width: 30px;
+    margin: -2px;
+}
+div.row:nth-child(2n) div.square:nth-child(2n+1){
+    background-color: black;
+}
+div.row:nth-child(2n+1) div.square:nth-child(2n){
+    background-color: black;
+}
