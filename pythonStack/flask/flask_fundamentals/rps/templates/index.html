@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPS - Dojo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+    <div class="container-fluid bg-dark pt-5 pb-5">
+        <div class="container col-8">
+            <p style="display: inline-block" class="text-light col-5 ml-4">CPU Wins: {{cpu_wins_count}}</p>
+            <p style="display: inline-block" class="text-light col-6 text-right align-top">Player Wins: {{player_wins_count}}</p>
+        </div>
+        <div class="container bg-secondary col-8 rounded p-5">
+            <h1 class="text-center mb-3">Rock Paper Scissors</h1>
+            <div class="container text-center">
+                <form action="/result" method='post'>
+                    <input type="image" name="rock" value="rock_choice" class="mr-5" src="{{url_for('static', filename='img/rock.png')}}" alt="rock">
+                    <input type="image" name="paper" value="paper_choice" class="mr-5" src="{{url_for('static', filename='img/paper.png')}}" alt="paper"> 
+                    <input type="image" name="scissors" value="scissors_choice" class="scissors_img ml-3" src="{{url_for('static', filename='img/scissors.png')}}" alt="scissors">
+                </form>
+            </div>
+            <div class="container mt-3">
+                <h4 class="text-center text-light">You picked: <span class="text-{{player_choice_color}}">{{player_display}}</span></h4>
+                <h4 class="text-center text-light">Computer picked: <span class="text-{{cpu_choice_color}}">{{cpu_display}}</span></h4>
+                <h4 class="text-center text-light">{{outcome_sent}}</h4>
+                <a class="btn btn-md btn-success" href="/reset_score">Reset Score</a>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>

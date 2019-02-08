@@ -1,0 +1,12 @@
+*{
+    margin: 0px auto;
+    padding: 0px;
+    /* border: 1px solid pink; */
+}
+
+input{
+    width: 25%;
+}
+input.scissors_img{
+    width: 30%;
+}

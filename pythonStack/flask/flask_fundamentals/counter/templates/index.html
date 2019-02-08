@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container-fluid bg-dark pt-5 pb-5">
+        <div class="container col-5 bg-secondary pb-4 pt-4 rounded">
+            <h1>Counter</h1>
+            <h2>You have been here {{ session['count'] }} times.</h2>
+            <form method='post'>
+                <div class="input-group mb-3 mt-3">
+                    <input type="text" name="increase" class="form-control border-dark col-5" placeholder="Increase visits by:">
+                    <div class="input-group-append">
+                        <button class="btn btn-info border-dark border-left-0" type="submit">Button</button>
+                    </div>
+                </div>
+            </form>
+            <button type="button" class="btn btn-success mr-3 border-dark text-dark">+{{num}} Visits</button>
+            <a href="/destroy_session" class="btn btn-warning border-dark">Reset</a>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
