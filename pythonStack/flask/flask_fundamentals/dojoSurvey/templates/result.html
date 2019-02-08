@@ -6,18 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dojo Survey</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h2>Submitted Info:</h2>
-    <dl class="row">
-            <dt class="col-sm-3">Name</dt>
-            <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
-            <dt class="col-sm-3">Name</dt>
-            <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
-            <dt class="col-sm-3">Name</dt>
-            <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
-            <dt class="col-sm-3">Name</dt>
-            <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
-    </dl>
+    <div class="container-fluid bg-warning">
+        <br>
+        <div class="container col-8 bg-secondary">
+            <h2>Submitted Info:</h2>
+            <dl class="row">
+                    <dt class="col-sm-3">Name:</dt>
+                    <dd class="col-sm-9">{{ name_on_template }}</dd>
+                    <dt class="col-sm-3">Favorite Color:</dt>
+                    <dd class="col-sm-9">{{ color_on_template }}</dd>
+                    <dt class="col-sm-3">Favorite Animal:</dt>
+                    <dd class="col-sm-9">{{ animal_on_template }}</dd>
+                    <dt class="col-sm-3">Favorite Word:</dt>
+                    <dd class="col-sm-9">{%for word in request.form['word'] %}{{ word }} {% endfor %}</dd>
+                    <dt class="col-sm-3">Comments:</dt>
+                    <dd class="col-sm-9">{{ comment_on_template }}</dd>
+            </dl>
+        </div>
+        <br>
+    </div>
 </body>
 </html>

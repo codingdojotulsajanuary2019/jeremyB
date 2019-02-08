@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+div.container{
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 20px;
+}
+h1{
+    margin-bottom: 20px;
+}
+label{
+    font-weight: bold;
+}
+legend{
+    font-weight: bold;
+}
+p{
+    font-weight: bold;
+}
+
+dd{
+    display:inline-block;
+}
