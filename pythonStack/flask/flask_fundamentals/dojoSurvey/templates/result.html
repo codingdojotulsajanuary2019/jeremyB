@@ -21,7 +21,7 @@
                     <dt class="col-sm-3">Favorite Animal:</dt>
                     <dd class="col-sm-9">{{ animal_on_template }}</dd>
                     <dt class="col-sm-3">Favorite Word:</dt>
-                    <dd class="col-sm-9">{%for word in request.form['word'] %}{{ word }} {% endfor %}</dd>
+                    <dd class="col-sm-9">{%for word in word_on_template %}{{ word }} {% endfor %}</dd>
                     <dt class="col-sm-3">Comments:</dt>
                     <dd class="col-sm-9">{{ comment_on_template }}</dd>
             </dl>
