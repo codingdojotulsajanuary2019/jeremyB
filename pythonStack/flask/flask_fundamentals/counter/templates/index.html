@@ -13,7 +13,7 @@
         <div class="container col-5 bg-secondary pb-4 pt-4 rounded">
             <h1>Counter</h1>
             <h2>You have been here {{ session['count'] }} times.</h2>
-            <form method='post'>
+            <form action='/count_page' method='post'>
                 <div class="input-group mb-3 mt-3">
                     <input type="text" name="increase" class="form-control border-dark col-5" placeholder="Increase visits by:">
                     <div class="input-group-append">
@@ -21,9 +21,11 @@
                     </div>
                 </div>
             </form>
-            <button type="button" class="btn btn-success mr-3 border-dark text-dark">+{{num}} Visits</button>
-            <a href="/destroy_session" class="btn btn-warning border-dark">Reset</a>
+            <form action="/increase_page" method='post'>
+                <button type="submit" name="increase_visits" class="btn btn-success mr-3 border-dark text-dark">+{{num_input |default(2)}} Visits</button>
             
+            <a href="/destroy_session" class="btn btn-warning border-dark">Reset</a>
+        </form>
         </div>
     </div>
     
