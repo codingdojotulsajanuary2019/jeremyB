@@ -15,11 +15,17 @@ def index():
 @app.route('/number_get', methods=['POST'])
 def get_num():
     print("^"*50)
+    if 'attempts' in session:
+        session['attempts'] +=1
+    else:
+        session['attempts'] = 1
     session['num'] = request.form['guess']
     print(session['num'])
     print(randNum)
     if(int(session['num']) ==randNum):
         return redirect('/you_win')
+    if session['attempts'] > 5:
+        return redirect('/you_lose')
     return redirect('/bad_guess')
 
 @app.route('/bad_guess')
@@ -31,12 +37,17 @@ def lowHigh():
         response = "Too low!"
     elif(int(session['num']) == randNum):
         return redirect('/you_win')
-    return render_template('bad_guess.html', guess_message=response)
+    return render_template('bad_guess.html', guess_message=response, guess_number=session['attempts'])
 
 @app.route('/you_win')
 def winner():
     print("&"*50)
-    return render_template('you_win.html',divNum = randNum)
+    return render_template('you_win.html',divNum = randNum, guess_number=session['attempts'])
+
+@app.route('/you_lose')
+def loser():
+    print("$"*50)
+    return render_template('you_lose.html', divNum = randNum, guess_number=session['attempts'])
 
 
 @app.route('/destroy', methods=['POST'])

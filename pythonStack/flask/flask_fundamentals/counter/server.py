@@ -9,6 +9,7 @@ def index():
         session['count'] += 1
     else:
         session['count']=1
+    print(session['count'])
     if 'increase_val' in session:
         num = session['increase_val']
     else:
