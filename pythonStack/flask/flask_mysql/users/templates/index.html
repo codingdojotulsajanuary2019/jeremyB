@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container offset-lg-1 mt-4">
+            <h1 class="mb-4">All Users</h1>
+            <table class="table table-striped col-10">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope='col'>ID</th>
+                        <th scope='col'>Full Name</th>
+                        <th scope='col'>Email</th>
+                        <th scope='col'>Created At</th>
+                        <th scope='col'>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for one_user in all_users %}
+                    <tr>
+                        <td>{{one_user["id"]}}</td>
+                        <td>{{one_user["full_name"]}}</td>
+                        <td>{{one_user["email"]}}</td>
+                        <td>{{one_user["created_at"]}}</td>
+                        <td>
+                            <a href="/users/{{one_user['id']}}">Show</a>
+                             | 
+                            <a href="users/{{one_user['id']}}/edit">Edit</a>
+                              |
+                            <a href="users/{{one_user['id']}}/delete">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+            <a href="users/new">Add a New User</a>
+        </div>
+
+    <!-- <h1>Add a New User</h1>
+    <form action="/users/new" method="POST">
+        <p>Full Name: <input type="text" name="fname"></p>
+        <p>Email: <input type="text" name="email"></p>
+        <input type="submit" value="Create">
+    </form> -->
+    
+</body>
+</html>

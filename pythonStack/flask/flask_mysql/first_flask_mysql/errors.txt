@@ -1,0 +1,26 @@
+Change username:
+    builtins.RuntimeError
+    RuntimeError: cryptography is required for sha256_password or caching_sha2_password
+
+
+Change host:
+    pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'local' ([Errno 8] nodename nor servname provided, or not known)")
+
+Changed connection variable:
+    NameError: name 'connection' is not defined
+
+Remove DB:
+    TypeError: __init__() takes 1 positional argument but 2 were given
+
+Remove db from second function:
+    TypeError: __init__() missing 1 required positional argument: 'db'
+
+Change finally statement:
+    TypeError: 'Connection' object is not callable
+
+Mispelled import:
+    File "server.py", line 2, in <module>
+        from mysqlconnection import connectToMySQL
+    File "/Users/JB/Documents/codingDojo/pythonStack/flask/flask_mysql/first_flask_mysql/mysqlconnection.py", line 2, in <module>
+        import pymysqll.cursors
+    ModuleNotFoundError: No module named 'pymysqll'

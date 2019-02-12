@@ -11,55 +11,67 @@
 <body>
     <div class="container-fluid bg-info py-5">
         <div class="container col-12 bg-secondary rounded border border-dark py-4">
-           <div class="button_holder mb-4 ml-3">
+           <div class="button_holder mb-4 ml-3 d-inline-block">
                 <button type="button" class="btn btn-light">
                     Your Gold: <span class="badge badge-dark">{{ player_gold }}</span>
                 </button>
             </div>
-            <div class="form_holder container bg-light col-2 rounded mx-5 pt-2 pb-4 text-center border border-dark">
-                <form action="/gold_math" method="post">
-                    <h2>Farm</h2>
-                    <p>(earns 10-20 gold)</p>
-                    <input type="hidden" name="choice" value="farm">
-                    <button type="submit" class="btn btn-primary" >Find Gold</button>
-                </form>
+            <div class="button_holder mb-4 ml-3 d-inline-block mr-5 mb-5">
+                <button type="button" class="btn btn-light">
+                    Turn: <span class="badge badge-dark">{{ session['turn'] }}</span>
+                </button>
             </div>
-            <div class="form_holder container col-2 bg-light rounded mx-5 pt-2 pb-4 text-center border border-dark">
-                <form action="/gold_math" method="post">
-                    <h2>Cave</h2>
-                    <p>(earns 0-30 gold)</p>
-                    <input type="hidden" name="choice" value="cave">
-                    <button type="submit" class="btn btn-primary" >Find Gold</button>
-                </form>
+            <div class="win_loss d-inline-block ml-5 text-warning">
+                <h3 class="{{ winner_show }}">You win!</h3>
+                <h3 class="{{ loser_show }}">You lose!</h3>
             </div>
-            <div class="form_holder container col-2 bg-light rounded mx-5 pt-2 pb-4 text-center border border-dark">
-                <form action="/gold_math" method="post">
-                    <h2>House</h2>
-                    <p>(earns 15 gold)</p>
-                    <input type="hidden" name="choice" value="house">
-                    <button type="submit" class="btn btn-primary" >Find Gold</button>
-                </form>
-            </div>
-            <div class="form_holder container col-2 bg-light rounded mx-4 mb-5 pt-2 pb-4 text-center border border-dark">
-                <form action="/gold_math" method="post">
-                    <h2>Casino</h2>
-                    <p>(earns/lose 0-50 gold)</p>
-                    <input type="hidden" name="choice" value="casino">
-                    <button type="submit" class="btn btn-primary" >Gamble</button>
-                </form>
-            </div>
-            <div class="card border-dark col-6" style="height:180px; padding: 0px;">
-                <div class="card-header w-100"><h5>Your activities</h5></div>
-                <div class="card-body text-dark overflow-auto w-100">
-                    {% for x in session['message'] | reverse %}
-                        {{x | safe}}
-                    {% endfor %}
+
+            <div class="separator">
+                <div class="form_holder container bg-light col-2 rounded mx-5 pt-2 pb-4 text-center border border-dark">
+                    <form action="/gold_math" method="post">
+                        <h2>Farm</h2>
+                        <p>(earns 10-20 gold)</p>
+                        <input type="hidden" name="choice" value="farm">
+                        <button type="submit" class="btn btn-primary {{ game_over }}" >Find Gold</button>
+                    </form>
                 </div>
+                <div class="form_holder container col-2 bg-light rounded mx-5 pt-2 pb-4 text-center border border-dark">
+                    <form action="/gold_math" method="post">
+                        <h2>Cave</h2>
+                        <p>(earns 0-30 gold)</p>
+                        <input type="hidden" name="choice" value="cave">
+                        <button type="submit" class="btn btn-primary {{ game_over }}" >Find Gold</button>
+                    </form>
+                </div>
+                <div class="form_holder container col-2 bg-light rounded mx-5 pt-2 pb-4 text-center border border-dark">
+                    <form action="/gold_math" method="post">
+                        <h2>House</h2>
+                        <p>(earns 15 gold)</p>
+                        <input type="hidden" name="choice" value="house">
+                        <button type="submit" class="btn btn-primary {{ game_over }}" >Find Gold</button>
+                    </form>
+                </div>
+                <div class="form_holder container col-2 bg-light rounded mx-4 mb-5 pt-2 pb-4 text-center border border-dark">
+                    <form action="/gold_math" method="post">
+                        <h2>Casino</h2>
+                        <p>(earns/lose 0-60 gold)</p>
+                        <input type="hidden" name="choice" value="casino">
+                        <button type="submit" class="btn btn-primary {{ game_over }}" >Gamble</button>
+                    </form>
+                </div>
+                <div class="card border-dark col-6" style="height:180px; padding: 0px;">
+                    <div class="card-header w-100"><h5>Your activities</h5></div>
+                    <div class="card-body text-dark overflow-auto w-100">
+                        {% for x in session['message'] | reverse %}
+                            {{x | safe}}
+                        {% endfor %}
+                    </div>
+                </div>
+                <form action="/gold_math" method="post" class="ml-3 {{ session['hidden_reset'] }}">
+                    <input type="hidden" name="choice" value="reset">
+                    <button type="submit" class="btn btn-warning">Reset Game</button>
+                </form>
             </div>
-            <form action="/gold_math" method="post" class="ml-3">
-                <input type="hidden" name="choice" value="reset">
-                <button type="submit" class="btn btn-warning">Reset Game</button>
-            </form>
         </div>
     </div>
     

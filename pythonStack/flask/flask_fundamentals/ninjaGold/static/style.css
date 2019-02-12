@@ -19,3 +19,7 @@ div.card-body p{
 div.card-body p.loss_red{
     color: red;
 }
+
+.hide_me{
+    visibility: hidden;
+}
