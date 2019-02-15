@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"
+</head>
+<body>
+    <div class="container-fluid bg-info">
+        <br>
+        <div class="container col-6 bg-secondary rounded p-3">
+            <h1>Welcome to my form</h1>
+            <form action='/create' method='post'>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p>{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <div class="form-group row">
+                    <label for="yourName" class="col-sm-3 col-form-label">Your Name</label>
+                    <div class="col-sm-9">
+                    <input type="text" name="name" class="form-control" id="name_input" placeholder="I promise not to sell your data">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="favColor" class="col-sm-4 col-form-label">Dojo Location</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" id="dojoLocal" name="dojoLocal">
+                           <option>Choose an Option</option>
+                            {% for dojo in locals %}
+                            <option>{{ dojo['name'] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="favLang" class="col-sm-4 col-form-label">Favorite Language</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" id="favLang" name="favLang">
+                            <option>Choose an Option</option>
+                            {% for type in langs %}
+                            <option>{{ type['name']}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="commentsTextarea">Comments (Optional)</label>
+                    <textarea class="form-control" id="commentsTextarea" rows="2" name="comments" placeholder="Leave your complaints or compliments here."></textarea>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-8">
+                        <button type="submit" class="btn btn-primary">Give me all your info</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br>
+    </div>
+</body>
+</html>

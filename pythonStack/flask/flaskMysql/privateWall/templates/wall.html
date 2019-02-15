@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Wall</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark sticky-top text-light">
+        <h4>Coding Dojo Wall</h4>
+        <div class="d-inline-block"> 
+            <p>Welcome, {{session['name']}}! <span class="ml-4"><a href="/logout">logout</a></span></p> 
+        </div>
+    </nav>
+    <div class="container-fluid bg-warning pt-4">
+        <div class="jumbotron col-5 align-top d-inline-block ml-4 mr-4">
+            <h5 class="mb-4"><u>{{numMess}} Message(s) for You</u></h5>
+            {% for message in messages %}
+                <p>{{message['firstName']}} said ({{message['created_at'] |humanize() }}):</p>
+                <p class="offset-1">{{message['content']}} <a class="float-right" href="/delete/{{message['id']}}">Delete</a></p>
+            {% endfor %}
+        </div>            
+        <div class="jumbotron col-6 align-top d-inline-block ml-4">
+            <h5 class="mb-4"><u>Send Messages</u></h5>
+            <p>You have sent {{sentMess}} messages so far</p>
+            {% for user in users %}
+                <form class="form-inline" action="/message/{{user['id']}}" method="post">
+                    {% with messages = get_flashed_messages(category_filter=['message']) %} 
+                        {% if messages %}                      
+                            {% for message in messages %}            
+                                <small style="color:red">{{message}}</small>                   
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <div class="form-group row col-12">
+                        <div class="w-10">
+                            <label for="textarea" class="col-form-label">{{user['firstName']}}</label>
+                        </div>
+                        <div class="col-sm-9 d-inline-block">
+                            <textarea name="content" class="form-control w-100"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2 d-inline-block align-top">Send</button>
+                    </div>
+                </form>
+                <br>
+            {% endfor %}
+        </div>    
+    </div>              
+
+</body>
+</html>

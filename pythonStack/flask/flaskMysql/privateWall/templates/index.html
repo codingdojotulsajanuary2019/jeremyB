@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Wall</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid bg-dark text-light">
+        <h1>Dojo Wall</h1>
+        <div class="jumbotron col-6 d-inline-block text-dark ml-4 mr-5 mt-4">
+            <h2>Register here!</h2>
+
+            <form action="/register" method="post">
+                
+                <div class="form-group mt-4">
+                    <label>First Name</label>
+                    {% with messages = get_flashed_messages(category_filter=['fname']) %} 
+                        {% if messages %}                      
+                            {% for message in messages %}            
+                                <small style="color:red">{{message}}</small>                   
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <input type="text" name="fname" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Last Name</label>
+                    {% with messages = get_flashed_messages(category_filter=['lname']) %} 
+                        {% if messages %}                      
+                            {% for message in messages %}            
+                                <small style="color:red">{{message}}</small>                   
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <input type="text" name="lname" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Email address</label>
+                    {% with messages = get_flashed_messages(category_filter=['email']) %} 
+                        {% if messages %}                      
+                            {% for message in messages %}            
+                                <small style="color:red">{{message}}</small>                 
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <input type="text" name="email" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    {% with messages = get_flashed_messages(category_filter=['pword']) %} 
+                        {% if messages %}                      
+                            {% for message in messages %}            
+                                <small style="color:red">{{message}}</small>                 
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <input type="password" name="pword" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    {% with messages = get_flashed_messages(category_filter=['cpword']) %} 
+                        {% if messages %}                      
+                            {% for message in messages %}            
+                                <small style="color:red">{{message}}</small>                    
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <input type="password" name="cpword" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary mt-4">Register</button>
+            </form>
+        </div>
+        <div class="jumbotron col-5 d-inline-block text-dark align-top mt-4">
+            <h2>Login here!</h2>
+            {% with messages = get_flashed_messages(category_filter=['login']) %} 
+                {% if messages %}                      
+                    {% for message in messages %}            
+                        <small style="color:red">{{message}}</small>                    
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form action="/login" method="post">
+                <div class="form-group mt-4">
+                    <label>Email address</label>
+                    <input type="text" name="email" class="form-control">
+                </div>
+                <div class="form-group mt-3">
+                    <label>Password</label>
+                    <input type="password" name="pword" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary mt-4">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

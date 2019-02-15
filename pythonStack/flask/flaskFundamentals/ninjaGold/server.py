@@ -67,7 +67,7 @@ def thatMoneyMath():
 
     elif request.form['choice'] == 'casino':
         print('Casino was chosen')
-        randNum = random.randint(-60,60)
+        randNum = random.randint(-60,90)
         print('Casino check: ', randNum)
         session['coinage'] += randNum
         print('gold: ',session['coinage'])
