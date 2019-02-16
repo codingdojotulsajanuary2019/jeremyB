@@ -1,0 +1,25 @@
+*{
+    padding: 0px;
+    margin: 0px auto;
+}
+
+div.form_holder{
+    display: inline-block
+}
+
+div.card{
+    padding: 0px;
+}
+
+div.card-body p{
+    color: green;
+    margin:0px;
+}
+
+div.card-body p.loss_red{
+    color: red;
+}
+
+.hide_me{
+    visibility: hidden;
+}

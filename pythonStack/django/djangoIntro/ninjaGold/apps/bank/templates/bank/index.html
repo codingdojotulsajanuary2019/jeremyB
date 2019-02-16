@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bank/css/style.css' %}">
+</head>
+<body>
+    <div class="container-fluid bg-info py-5">
+        <div class="container col-10 bg-secondary rounded border border-dark py-4">
+           <div class="button_holder mb-4 ml-3 d-inline-block">
+                <button type="button" class="btn btn-light">
+                    Your Gold: <span class="badge badge-dark">{{request.session.coinage}}</span>
+                </button>
+            </div>
+            <div class="separator">
+                <div class="form_holder container bg-light col-2 rounded ml-5 mx-4 pt-2 pb-4 text-center border border-dark d-inline-block">
+                    <form action="/gold_math" method="post">
+                        {% csrf_token %}
+                        <h2>Farm</h2>
+                        <p>(earn 10-20 gold)</p>
+                        <input type="hidden" name="choice" value="farm">
+                        <button type="submit" class="btn btn-primary" >Find Gold</button>
+                    </form>
+                </div>
+                <div class="form_holder container col-2 bg-light rounded mx-5 pt-2 pb-4 text-center border border-dark d-inline-block">
+                    <form action="/gold_math" method="post">
+                        {% csrf_token %}
+                        <h2>Cave</h2>
+                        <p>(earn 0-30 gold)</p>
+                        <input type="hidden" name="choice" value="cave">
+                        <button type="submit" class="btn btn-primary" >Find Gold</button>
+                    </form>
+                </div>
+                <div class="form_holder container col-2 bg-light rounded mx-4 pt-2 pb-4 text-center border border-dark d-inline-block">
+                    <form action="/gold_math" method="post">
+                        {% csrf_token %}
+                        <h2>House</h2>
+                        <p>(earn 15 gold)</p>
+                        <input type="hidden" name="choice" value="house">
+                        <button type="submit" class="btn btn-primary" >Find Gold</button>
+                    </form>
+                </div>
+                <div class="form_holder container col-2 bg-light ml-5 rounded pt-2 pb-4 text-center border border-dark d-inline-block">
+                    <form action="/gold_math" method="post">
+                        {% csrf_token %}
+                        <h2>Casino</h2>
+                        <p>(earn/lose 0-90)</p>
+                        <input type="hidden" name="choice" value="casino">
+                        <button type="submit" class="btn btn-primary" >Gamble</button>
+                    </form>
+                </div>
+                <div class="card border-dark col-6 offset-3 mt-5" style="height:180px; padding: 0px;">
+                    <div class="card-header w-100"><h5>Your activities</h5></div>
+                    <div class="card-body text-dark overflow-auto w-100">
+                        {% for x in request.session.message reversed %}
+                            {{x | safe}}
+                        {% endfor %}
+                    </div>
+                </div>
+                <form action="/gold_math" method="post" class="ml-3">
+                    {% csrf_token %}
+                    <input type="hidden" name="choice" value="reset">
+                    <button type="submit" class="btn btn-warning">Reset Game</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
