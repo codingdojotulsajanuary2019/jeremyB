@@ -1,0 +1,64 @@
+Query: Create 5 books with the following names: C Sharp, Java, Python, PHP, Ruby
+>>> Book.objects.create(title = "C Sharp", desc = "A book about learning C#")
+>>> Book.objects.create(title = "Java")
+>>> Book.objects.create(title = "Python")
+>>> Book.objects.create(title = "PHP")
+>>> Book.objects.create(title = "Ruby")
+
+Query: Create 5 different authors: Jane Austen, Emily Dickinson, Fyodor Dostoevksy, William Shakespeare, Lau Tzu
+>>> Author.objects.create(fname = "Jane", lname="Austen")
+>>> Author.objects.create(fname = "Emily", lname="Dickinsons")
+>>> Author.objects.create(fname = "Fyodor", lname="Dostoevsky")
+>>> Author.objects.create(fname = "William", lname="Shakespeare")
+>>> Author.objects.create(fname = "Lau", lname="Tzu")
+
+Add a new text field in the authors table called 'notes'.
+Create and run the migration files to update the table in your database.
+notes = models.TextField(null=True)
+
+Query: Change the name of the C Sharp book to C#
+c = Book.objects.get(title = "C Sharp")
+c.title = "C#"
+c.save
+
+Query: Change the first name of the 4th author to Bill
+b = Author.objects.get(fname = "William")
+b.fname = "Bill"
+b.save
+
+Query: Assign the first author to the first 2 books
+book1 = Book.objects.get(id=1)
+book2 = Book.objects.get(id=2)
+author1 = Author.objects.get(id=1)
+author1.books.add(book1, book2)
+
+Query: Assign the second author to the first 3 books
+author2 = Author.objects.get(id=2)
+book3 = Book.objects.get(id=3)
+author2.books.add(book1, book2, book3)
+
+Query: Assign the third author to the first 4 books
+author3 = Author.objects.get(id=3)
+book4 = Book.objects.get(id=4)
+author3.books.add(book1, book2, book3, book4)
+
+Query: Assign the fourth author to the first 5 books (or in other words, all the books)
+book5 = Book.objects.get(id=5)
+author4 = Author.objects.get(id=4)
+author4.books.add(book1, book2, book3, book4, book5)
+
+Query: Retrieve all the authors for the 3rd book
+book3.authors.all()
+
+Query: Remove the first author of the 3rd book
+book3.authors.remove(author2)
+
+Query: Add the 5th author as one of the authors of the 2nd book
+author5 = Author.objects.get(id=5)
+book2.authors.add(author5)
+
+Query: Find all the books that the 3rd author is part of
+author3.books.all()
+
+Query: Find all the authors that contributed to the 5th book
+book5.authors.all()

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+<body>
+        <div class="container-fluid bg-success p-3">
+            <div class="container bg-dark col-12 p-5 rounded">
+                <div class="mb-5">
+                    <a href="/" class="btn btn-primary align-top">Go back</a>
+                </div>
+                <div class="container col-5 bg-light rounded p-4 d-inline-block mx-5">
+                    <h1>{{a_book.title}}</h1>
+                    <h3>ID: {{a_book.id}}</h3>
+                    <div class="container p-0">
+                        <h3>Description: </h3>
+                        <p>{{a_book.desc}}</p>
+                    </div>
+                    <h3>Authors: </h3>
+                    <ul>
+                        {% for name in a_book.authors.all %}
+                            <li>{{name.fname}} {{name.lname}}</li>
+                        {% endfor %}
+                    </ul>
+                    <form action="/add_author_to_book/{{a_book.id}}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <select name="add_author" class="form-control col-6 d-inline-block" id="sel1">
+                            {% for person in all_author %}
+                                <option>{{person.fname}} {{person.lname}}</option>
+                            {% endfor %}
+                            </select>
+                            <button type="submit" class="btn btn-primary d-inline-block">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>

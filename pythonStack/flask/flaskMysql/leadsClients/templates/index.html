@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pets</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+   <style>
+   </style>
+   <script>
+        window.onload = function() {
+
+        var options = {
+            title: {
+                text: "Website Traffic Source"
+            },
+            data: [{
+                    type: "pie",
+                    startAngle: 45,
+                    showInLegend: "true",
+                    legendText: "{label}",
+                    indexLabel: "{label} ({y})",
+                    yValueFormatString:"#,##0.#"%"",
+                    dataPoints: [
+                        {% for chartData in leads %}
+                            { label: "{{chartData['full_name']}}", y: "{{chartData['total_leads']}}" },
+                        {% endfor %}
+                    ]
+            }]
+        };
+        $("#chartContainer").CanvasJSChart(options);
+
+        }
+    </script>
+</head>
+<body>    
+    <div class="container-fluid bg-dark p-4">
+        <div class="container rounded bg-light p-3">
+            <h3><u>List of all customers and # of leads</u></h3>
+            <table class="table-sm table-striped table-dark col-4 my-4 d-inline-block text-center">
+                    <thead>
+                        <tr>
+                            <th scope='col'>Customer Name</th>
+                            <th scope='col'># of Leads</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for data in leads %}
+                        <tr>
+                            <td>{{data['full_name']}}</td>
+                            <td>{{data['total_leads']}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="container d-inline-block align-top mt-5 ml-4" id="chartContainer" style="height: 500px; width: 60%;">
+                <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+                <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+            </div>
+        </div>
+
+    </div>
+</body>

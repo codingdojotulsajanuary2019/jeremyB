@@ -1,0 +1,27 @@
+Query: Create 3 new users
+from apps.users_app.models import *
+Users.objects.create(fname="Jeremy", lname = "Benedik", email="jeremybenedik@gmail.com", age=28)
+Users.objects.create(fname="Snoopy", lname = "Brown", email="snoopy@gmail.com", age=68)
+Users.objects.create(fname="Otis", lname = "Dog", email="otis@gmail.com", age=3)
+
+Query: Retrieve all the users
+Query: Retrieve the last user
+Query: Retrieve the first user
+Users.objects.all()
+Users.objects.last()
+Users.objects.first()
+
+Query: Change the user with id=3 so their last name is Pancakes.
+pan = Users.objects.get(id=3)
+pan.lname = "Pancakes"
+pan.save()
+
+Query: Delete the user with id=2 from the database
+bye = Users.objects.get(id=2)
+bye.delete()
+
+Query: Get all the users, sorted by their first name
+Users.objects.all().order_by("fname")
+
+BONUS Query: Get all the users, sorted by their first name in descending order
+Users.objects.all().order_by("-fname")

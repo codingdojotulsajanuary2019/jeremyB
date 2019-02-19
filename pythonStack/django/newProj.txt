@@ -1,0 +1,41 @@
+django-admin startproject your_project_name_here
+cd your_project_name_here
+mkdir apps
+cd apps
+python ../manage.py startapp your_app_name_here
+cd app_name
+touch urls.py
+
+
+Add to:
+Project Route settings.py
+Add 'apps.your_app_name_here',
+
+Change urls.py:
+from django.conf.urls import url, include	
+
+urlpatterns = [
+    url(r'^', include('apps.your_app_name_here.urls')),	# use your app_name here
+]
+
+
+In App route:
+For URLS.py
+from django.conf.urls import url
+from . import views
+urlpatterns = [
+    url(r'^$', views.index),
+]
+
+
+VIEWS.py
+from django.shortcuts import render, HttpResponse
+def index(request):
+    return HttpResponse("this is the equivalent of @app.route('/')!")
+
+
+
+Finally
+python manage.py runserver
+
+

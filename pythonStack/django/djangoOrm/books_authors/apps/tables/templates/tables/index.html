@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg-success p-3">
+        <div class="container bg-dark col-12 p-5 rounded color-light">
+            <div class="container text-center mb-5">    
+                <h1 class="text-light text-center">Books & Authors</h1>
+                <a href="/authors" class="btn btn-primary">Authors</a>
+            </div>
+            <div class="container col-5 bg-light rounded p-4 d-inline-block mx-5">
+                <form action="/add_book" method="post" class="col-12">
+                    {% csrf_token %}
+                    <h2 class="col-8">Add a Book</h2>
+                    <div class="form-group row mt-4">
+                        <label for="book_title" class="col-sm-4 col-form-label">Title</label>
+                        <input type="text" name="title">
+                    </div>
+                    <div class="form-group row">
+                        <label for="book_desc" class="col-sm-4 col-form-label">Description</label>
+                        <textarea name="description" class="col-8" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+            <div class="container bg-light col-4 rounded d-inline-block align-top ml-5">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope='col'>ID</th>
+                            <th scope='col'>Title</th>
+                            <th scope='col'>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for each_book in book_table %}
+                        <tr>
+                            <td>{{each_book.id}}</td>
+                            <td>{{each_book.title}}</td>
+                            <td><a href="/books/{{each_book.id}}">View</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
