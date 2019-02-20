@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TV Shows</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg-dark p-3">
+        <div class="container bg-light rounded p-4">
+            <h1 class="mb-3 d-inline-block">Add a New Show</h1>
+            <a class="float-right btn btn-warning align-top d-inline-block" href="/shows">Go Back</a>
+            <div>
+                <form action="add_new" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label>Title</label>
+                        {% if messages %}
+                            {% for message in messages %}
+                                {% if 'form_title' in message.tags %}
+                                <p>{{ message }}</p>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        <input type="text" class="form-control mb-4" name="form_title">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Netowrk</label>
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        {% if 'form_network' in message.tags %}
+                                        <p>{{ message }}</p>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                                <input type="text" class="form-control" name="form_network">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Release Date</label>
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        {% if 'form_date' in message.tags %}
+                                        <p>{{ message }}</p>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                                <input type="date" name="form_date" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    {% if 'form_desc' in message.tags %}
+                                    <p>{{ message }}</p>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            <textarea name="form_desc" class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TV Shows</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg-dark p-3">
+        <div class="container bg-light rounded p-4">
+            <h1 class="mb-3">All Shows</h1>
+            <div>
+                    <table class="table table-dark table-striped">
+                        <thead>
+                            <tr>
+                                <th scope='col'>ID</th>
+                                <th scope='col'>Title</th>
+                                <th scope='col'>Network</th>
+                                <th scope='col'>Release Date</th>
+                                <th scope='col'>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for each_show in show_table %}
+                            <tr>
+                                <td><a class="text-warning" href="/shows/{{each_show.id}}">{{each_show.id}}</a></td>
+                                <td>{{each_show.title}}</td>
+                                <td>{{each_show.network}}</td>
+                                <td>{{each_show.release_date}}</td>
+                                <td>
+                                    <a class="text-warning" href="/shows/{{each_show.id}}">Show</a> |
+                                    <a class="text-warning" href="/shows/{{each_show.id}}/edit">Edit</a> |
+                                    <a class="text-warning" href="/shows/{{each_show.id}}/destroy">Delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+            </div>
+            <a class="btn btn-warning mt-3" href="/shows/new">Add a New Show</a>
+        </div>
+    </div>
+</body>
+</html>

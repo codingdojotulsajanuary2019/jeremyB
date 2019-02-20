@@ -1,0 +1,5 @@
+                                <td>
+                                    <a href="/shows/{{each_show.id}}">Show</a>|
+                                    <a href="/shows/{{each_show.id}}/edit">Edit</a>|
+                                    <a href="/shows/{{each_show.id}}/destroy">Delete</a>
+                                </td>
