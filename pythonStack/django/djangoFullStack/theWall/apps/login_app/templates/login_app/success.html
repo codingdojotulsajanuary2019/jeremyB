@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login & Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid bg-dark p-5">
+        <div class="container bg-light rounded p-4 col-8 d-inline-block ml-3 mr-5">
+            <h2 class="ml-2 border-bottom border-warning col-9">Success! Welcome, {{user_info.fname}}!</h2>
+            <h3 class="text-success ml-4 mt-4">Succesfully registered (or logged in)!</h3>
+        </div>
+        {% csrf_token %}
+            <a href="/logout" class="btn btn-warning align-top ml-5">Log Out</a>
+    </div>
+</body>
+</html>

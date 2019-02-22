@@ -1,0 +1,12 @@
+div.wrapper{
+    height: 900px;
+    width: 600px;
+    background-image: url('python-BSD.png');
+}
+
+div#header{
+    height: 600px;
+    width: 50px;
+    background-color: green;
+    opacity: 50%;
+}

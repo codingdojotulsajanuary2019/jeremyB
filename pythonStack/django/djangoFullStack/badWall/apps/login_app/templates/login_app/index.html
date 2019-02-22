@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Wall</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid bg-dark p-5">
+        <div class="container bg-light rounded p-4 col-6 d-inline-block ml-3 mr-5">
+            <h2 class="ml-3 border-bottom border-warning col-10">Registration</h2>
+
+            <form action="/registration" method="post">
+            {% csrf_token %}
+            {% if messages %}
+                {% for message in messages %}
+                    {% if 'fname' in message.tags %}
+                    <p class="text-danger"><small>{{message}}</small></p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+                <div class="form-group row mt-4 ml-3">
+                    <label class="col-sm-3 col-form-label">First Name</label>
+                    <input type="text" name="fname" class="form-control col-7">
+                </div>
+            {% if messages %}
+                {% for message in messages %}
+                    {% if 'lname' in message.tags %}
+                    <p class="text-danger"><small>{{message}}</small></p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+                <div class="form-group row mt-4 ml-3">
+                    <label class="col-sm-3 col-form-label">Last Name</label>
+                    <input type="text" name="lname" class="form-control col-7">
+                </div>
+            {% if messages %}
+                {% for message in messages %}
+                    {% if 'bday' in message.tags %}
+                    <p class="text-danger"><small>{{message}}</small></p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+                <div class="form-group row mt-4 ml-3">
+                    <label class="col-sm-3 col-form-label">Birthday</label>
+                    <input type="date" name="bday" class="form-control col-7">
+                </div>
+            {% if messages %}
+                {% for message in messages %}
+                    {% if 'email' in message.tags %}
+                    <p class="text-danger"><small>{{message}}</small></p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+                <div class="form-group row mt-4 ml-3">
+                    <label class="col-sm-3 col-form-label">Email</label>
+                    <input type="text" name="email" class="form-control col-7">
+                </div>
+            {% if messages %}
+                {% for message in messages %}
+                    {% if 'pword' in message.tags %}
+                    <p class="text-danger"><small>{{message}}</small></p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+                <div class="form-group row mt-4 ml-3">
+                    <label class="col-sm-3 col-form-label">Password</label>
+                    <input type="text" name="pword" class="form-control col-7">
+                </div>
+            {% if messages %}
+                {% for message in messages %}
+                    {% if 'cpword' in message.tags %}
+                    <p class="text-danger"><small>{{message}}</small></p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+                <div class="form-group row mt-4 ml-3">
+                    <label class="col-sm-3 col-form-label">Confirm PW</label>
+                    <input type="text" name="cpword" class="form-control col-7">
+                </div>
+                <div class="text-center container mt-4">
+                    <button type="submit" class="btn btn-warning">Register</button>
+                </div>
+            </form>
+        </div>
+        <div class="container bg-light rounded p-4 col-5 d-inline-block ml-3 align-top">
+            <h2 class="ml-3 border-bottom border-warning col-10">Login</h2>
+            <form action="/login" method="post">
+            {% csrf_token %}
+            {% if messages %}
+                {% for message in messages %}
+                    {% if 'login' in message.tags %}
+                    <p class="text-danger"><small>{{message}}</small></p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+                <div class="form-group row mt-4 ml-3">
+                    <label class="col-sm-3 col-form-label">Email</label>
+                    <input type="text" name="login_email" class="form-control col-7">
+                </div>
+                <div class="form-group row mt-4 ml-3">
+                    <label class="col-sm-3 col-form-label">Password</label>
+                    <input type="text" name="login_pword" class="form-control col-7">
+                </div>
+                <div class="text-center container mt-4">
+                    <button type="submit" class="btn btn-warning">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
