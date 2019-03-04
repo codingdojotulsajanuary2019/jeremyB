@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-warning">
+        <h3 class="d-inline-block">Hello {{user_info.fname}}! These are your stats!</h3>
+        <div class="navbar-nav d-inline-block">
+            <a class="nav-item mr-3" href="{% url 'wish:wishes' %}">Dashboard</a>
+            <a class="nav-item mr-3" href="/logout">Logout</a>
+        </div>
+    </nav>
+    <div class="container-fluid bg-dark p-5">
+        <div class="container bg-light rounded p-4">
+           <h4>Total wishes granted so far for all users: {{granted_query.count}}</h4>
+           <br>
+           <p>Your granted wishes: {{user_granted.count}}</p>
+           <p>Your pending wishes: {{user_pending.count}}</p>
+
+        </div>
+    </div>
+</body>
+
+</html>

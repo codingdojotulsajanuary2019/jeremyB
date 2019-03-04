@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-warning">
+        <h3 class="d-inline-block">Welcome, {{user_info.fname}}</h3>
+        <div class="navbar-nav d-inline-block">
+            <a class="nav-item mr-3" href="/logout">Logout</a>
+            <a href="wishes/stats" class="nav-item btn btn-dark mr-3">View Stats</a>
+            <a href="wishes/new" class="nav-item btn btn-dark">Make a Wish!</a>
+        </div>
+    </nav>
+    <div class="container-fluid bg-dark p-5">
+        <div class="container bg-light rounded p-4">
+            <h4>Your wish list:</h4>
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope='col'>Item</th>
+                        <th scope='col'>Date added</th>
+                        <th scope='col'>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for each_wish in my_wishes %}
+                    <tr>
+                        <td>{{each_wish.item}}</td>
+                        <td>{{each_wish.added}}</td>
+                        <td><a href="/wishes/delete/{{each_wish.id}}" class="text-warning">Remove</a> | <a href="/wishes/edit/{{each_wish.id}}" class="text-warning">Edit</a> | <a href="/wishes/grant/{{each_wish.id}}" class="text-warning">Granted</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <h4>Granted wishes:</h4>
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope='col'>Item</th>
+                        <th scope='col'>Wisher</th>
+                        <th scope='col'>Date added</th>
+                        <th scope='col'>Date Granted</th>
+                        <th scope='col'>Likes</th>
+                        <th scope='col'>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for each_wish in granted_wishes %}
+                    <tr>
+                        <td>{{each_wish.item}}</td>
+                        <td>{{each_wish.wished_by.fname}}</td>
+                        <td>{{each_wish.added}}</td>
+                        <td>{{each_wish.granted}}</td>
+                        <td>{{each_wish.likes.all.count}}</td>
+                        {% if each_wish.wished_by != user_info %}
+                        {% if user_info not in each_wish.likes.all %}
+                        <td><a href="/wishes/like/{{each_wish.id}}" class="text-warning">Like</a></td>
+                        {% endif %}
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

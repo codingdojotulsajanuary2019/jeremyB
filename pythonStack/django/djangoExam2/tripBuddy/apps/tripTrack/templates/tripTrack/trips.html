@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trips</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-warning">
+        <h3 class="d-inline-block">Hello {{user_info.fname}}!</h3>
+        <div class="navbar-nav d-inline-block">
+            <a class="nav-item mr-3" href="/logout">Logout</a>
+            <a href="trips/new" class="nav-item btn btn-dark">Create a new Trip!</a>
+        </div>
+    </nav>
+    <div class="container-fluid bg-dark p-5">
+        <div class="container bg-light rounded p-4">
+            <h4>Your trips:</h4>
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope='col'>Destination</th>
+                        <th scope='col'>Start Date</th>
+                        <th scope='col'>End Date</th>
+                        <th scope='col'>Plan</th>
+                        <th scope='col'>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for each_trip in my_trips %}
+                    <tr>
+                        <td><a href="/trips/info/{{each_trip.id}}" class="text-warning">{{each_trip.destination}}</a></td>
+                        <td>{{each_trip.start|date:'m/d/Y'}}</td>
+                        <td>{{each_trip.end|date:'m/d/Y'}}</td>
+                        <td>{{each_trip.plan}}</td>
+                        <td><a href="/trips/delete/{{each_trip.id}}" class="text-warning">Remove</a> | <a href="/trips/edit/{{each_trip.id}}" class="text-warning">Edit</a></td>
+                    </tr>
+                {% endfor %}
+                {% for each_trip in joined_trips %}
+                    <tr>
+                        <td><a href="/trips/info/{{each_trip.id}}" class="text-warning">{{each_trip.destination}}</a></td>
+                        <td>{{each_trip.start|date:'m/d/Y'}}</td>
+                        <td>{{each_trip.end|date:'m/d/Y'}}</td>
+                        <td>{{each_trip.plan}}</td>
+                        <td><a href="/trips/cancel/{{each_trip.id}}" class="text-warning">Cancel</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <h4>Other people's trips:</h4>
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope='col'>Destination</th>
+                        <th scope='col'>Start Date</th>
+                        <th scope='col'>End Date</th>
+                        <th scope='col'>Plan</th>
+                        <th scope='col'>Want to join?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for each_trip in other_trips %}
+                    <tr>
+                        <td><a href="/trips/info/{{each_trip.id}}" class="text-warning">{{each_trip.destination}}</a></td>
+                        <td>{{each_trip.start|date:'m/d/Y'}}</td>
+                        <td>{{each_trip.end|date:'m/d/Y'}}</td>
+                        <td>{{each_trip.plan}}</td>
+                        <td><a href="/trips/join/{{each_trip.id}}" class="text-warning">Join</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

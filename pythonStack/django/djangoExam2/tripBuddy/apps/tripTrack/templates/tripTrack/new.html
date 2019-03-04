@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Trip</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-warning">
+        <h3 class="d-inline-block">Hello {{user_info.fname}}! Create a trip!</h3>
+        <div class="navbar-nav d-inline-block">
+            <a class="nav-item mr-3" href="/logout">Logout</a>
+        </div>
+    </nav>
+    <div class="container-fluid bg-dark p-5">
+        <div class="container bg-light rounded ml-5 p-4 col-6">
+            <form action="create" method="post">
+                {% csrf_token %}
+                {% if messages %}
+                {% for message in messages %}
+                {% if 'destination' in message.tags %}
+                <small class="text-danger">{{ message }}</small>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                <div class="form-group row col-12 mt-3">
+                    <label class="col-form-label mr-4">Destination:</label>
+                    <div class="col-9">
+                        <input type="text" class="form-control" name="destination">
+                    </div>
+                </div>
+                {% if messages %}
+                {% for message in messages %}
+                {% if 'start' in message.tags %}
+                <small class="text-danger">{{ message }}</small>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                <div class="form-group row col-12 mt-4">
+                    <label class="col-form-label mr-2">Start Date:</label>
+                    <div class="col-9">
+                        <input type="date" name="start" class="form-control col-7">
+                    </div>
+                </div>
+                {% if messages %}
+                {% for message in messages %}
+                {% if 'end' in message.tags %}
+                <small class="text-danger">{{ message }}</small>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                <div class="form-group row col-12 mt-4">
+                    <label class="col-form-label mr-2">End Date:</label>
+                    <div class="col-9">
+                        <input type="date" name="end" class="form-control col-7">
+                    </div>
+                </div>
+                {% if messages %}
+                {% for message in messages %}
+                {% if 'plan' in message.tags %}
+                <small class="text-danger">{{ message }}</small>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                <div class="form-group row col-12 mt-4">
+                    <label class="col-form-label mr-2">Plan:</label>
+                    <div class="col-9">
+                        <textarea name="plan" class="form-control col-10" rows="3"></textarea>
+                    </div>
+                </div>
+                    <div class="d-block offset-4 mt-3">
+                        <a href="{% url 'trip:trips' %}" class="btn btn-warning mr-4">Cancel</a>
+                        <button type="submit" class="btn btn-warning">Submit</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+</body>
+
+</html>
