@@ -1,0 +1,11 @@
+/Users/JB/Documents/codingDojo/cStack/collections/bin/Debug/netcoreapp2.1/collections.deps.json
+/Users/JB/Documents/codingDojo/cStack/collections/bin/Debug/netcoreapp2.1/collections.runtimeconfig.json
+/Users/JB/Documents/codingDojo/cStack/collections/bin/Debug/netcoreapp2.1/collections.runtimeconfig.dev.json
+/Users/JB/Documents/codingDojo/cStack/collections/bin/Debug/netcoreapp2.1/collections.dll
+/Users/JB/Documents/codingDojo/cStack/collections/bin/Debug/netcoreapp2.1/collections.pdb
+/Users/JB/Documents/codingDojo/cStack/collections/obj/Debug/netcoreapp2.1/collections.csprojAssemblyReference.cache
+/Users/JB/Documents/codingDojo/cStack/collections/obj/Debug/netcoreapp2.1/collections.csproj.CoreCompileInputs.cache
+/Users/JB/Documents/codingDojo/cStack/collections/obj/Debug/netcoreapp2.1/collections.AssemblyInfoInputs.cache
+/Users/JB/Documents/codingDojo/cStack/collections/obj/Debug/netcoreapp2.1/collections.AssemblyInfo.cs
+/Users/JB/Documents/codingDojo/cStack/collections/obj/Debug/netcoreapp2.1/collections.dll
+/Users/JB/Documents/codingDojo/cStack/collections/obj/Debug/netcoreapp2.1/collections.pdb

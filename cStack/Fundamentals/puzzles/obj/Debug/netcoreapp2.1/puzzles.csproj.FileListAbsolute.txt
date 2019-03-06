@@ -1,0 +1,11 @@
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/puzzles/bin/Debug/netcoreapp2.1/puzzles.deps.json
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/puzzles/bin/Debug/netcoreapp2.1/puzzles.runtimeconfig.json
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/puzzles/bin/Debug/netcoreapp2.1/puzzles.runtimeconfig.dev.json
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/puzzles/bin/Debug/netcoreapp2.1/puzzles.dll
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/puzzles/bin/Debug/netcoreapp2.1/puzzles.pdb
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/puzzles/obj/Debug/netcoreapp2.1/puzzles.csprojAssemblyReference.cache
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/puzzles/obj/Debug/netcoreapp2.1/puzzles.csproj.CoreCompileInputs.cache
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/puzzles/obj/Debug/netcoreapp2.1/puzzles.AssemblyInfoInputs.cache
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/puzzles/obj/Debug/netcoreapp2.1/puzzles.AssemblyInfo.cs
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/puzzles/obj/Debug/netcoreapp2.1/puzzles.dll
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/puzzles/obj/Debug/netcoreapp2.1/puzzles.pdb

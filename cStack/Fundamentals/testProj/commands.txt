@@ -1,0 +1,55 @@
+Jeremys-MacBook-Pro:SecondCSharp JB$ clear
+Jeremys-MacBook-Pro:SecondCSharp JB$ dotnet --version
+2.1.403
+Jeremys-MacBook-Pro:SecondCSharp JB$ cd ..
+Jeremys-MacBook-Pro:cStack JB$ ls
+FirstCSharp	SecondCSharp
+Jeremys-MacBook-Pro:cStack JB$ dotnet new console -o testProj
+The template "Console Application" was created successfully.
+
+Processing post-creation actions...
+Running 'dotnet restore' on testProj/testProj.csproj...
+  Restoring packages for /Users/JB/Documents/codingDojo/cStack/testProj/testProj.csproj...
+  Generating MSBuild file /Users/JB/Documents/codingDojo/cStack/testProj/obj/testProj.csproj.nuget.g.props.
+  Generating MSBuild file /Users/JB/Documents/codingDojo/cStack/testProj/obj/testProj.csproj.nuget.g.targets.
+  Restore completed in 209.65 ms for /Users/JB/Documents/codingDojo/cStack/testProj/testProj.csproj.
+
+Restore succeeded.
+
+Jeremys-MacBook-Pro:cStack JB$ dotnet build
+Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa for .NET Core
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+MSBUILD : error MSB1003: Specify a project or solution file. The current working directory does not contain a project or solution file.
+Jeremys-MacBook-Pro:cStack JB$ dotnet run
+Couldn't find a project to run. Ensure a project exists in /Users/JB/Documents/codingDojo/cStack, or pass the path to the project using --project.
+Jeremys-MacBook-Pro:cStack JB$ ls
+FirstCSharp	SecondCSharp	testProj
+Jeremys-MacBook-Pro:cStack JB$ cd testProj/
+Jeremys-MacBook-Pro:testProj JB$ dotnet build
+Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa for .NET Core
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Restore completed in 42.16 ms for /Users/JB/Documents/codingDojo/cStack/testProj/testProj.csproj.
+  testProj -> /Users/JB/Documents/codingDojo/cStack/testProj/bin/Debug/netcoreapp2.1/testProj.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.59
+Jeremys-MacBook-Pro:testProj JB$ ls
+Program.cs	bin		obj		testProj.csproj
+Jeremys-MacBook-Pro:testProj JB$ dotnet bin/Debug/netcoreapp2.1/testProj.
+testProj.deps.json               testProj.runtimeconfig.dev.json
+testProj.dll                     testProj.runtimeconfig.json
+testProj.pdb
+Jeremys-MacBook-Pro:testProj JB$ dotnet bin/Debug/netcoreapp2.1/testProj.
+testProj.deps.json               testProj.runtimeconfig.dev.json
+testProj.dll                     testProj.runtimeconfig.json
+testProj.pdb
+Jeremys-MacBook-Pro:testProj JB$ dotnet bin/Debug/netcoreapp2.1/testProj.dll
+Hello World!
+Jeremys-MacBook-Pro:testProj JB$ dotnet run
+Hello World!
+Jeremys-MacBook-Pro:testProj JB$

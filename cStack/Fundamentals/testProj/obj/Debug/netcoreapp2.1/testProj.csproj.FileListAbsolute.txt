@@ -1,0 +1,11 @@
+/Users/JB/Documents/codingDojo/cStack/testProj/bin/Debug/netcoreapp2.1/testProj.deps.json
+/Users/JB/Documents/codingDojo/cStack/testProj/bin/Debug/netcoreapp2.1/testProj.runtimeconfig.json
+/Users/JB/Documents/codingDojo/cStack/testProj/bin/Debug/netcoreapp2.1/testProj.runtimeconfig.dev.json
+/Users/JB/Documents/codingDojo/cStack/testProj/bin/Debug/netcoreapp2.1/testProj.dll
+/Users/JB/Documents/codingDojo/cStack/testProj/bin/Debug/netcoreapp2.1/testProj.pdb
+/Users/JB/Documents/codingDojo/cStack/testProj/obj/Debug/netcoreapp2.1/testProj.csprojAssemblyReference.cache
+/Users/JB/Documents/codingDojo/cStack/testProj/obj/Debug/netcoreapp2.1/testProj.csproj.CoreCompileInputs.cache
+/Users/JB/Documents/codingDojo/cStack/testProj/obj/Debug/netcoreapp2.1/testProj.AssemblyInfoInputs.cache
+/Users/JB/Documents/codingDojo/cStack/testProj/obj/Debug/netcoreapp2.1/testProj.AssemblyInfo.cs
+/Users/JB/Documents/codingDojo/cStack/testProj/obj/Debug/netcoreapp2.1/testProj.dll
+/Users/JB/Documents/codingDojo/cStack/testProj/obj/Debug/netcoreapp2.1/testProj.pdb

@@ -1,0 +1,11 @@
+/Users/JB/Documents/codingDojo/cStack/fundamentals1/bin/Debug/netcoreapp2.1/fundamentals1.deps.json
+/Users/JB/Documents/codingDojo/cStack/fundamentals1/bin/Debug/netcoreapp2.1/fundamentals1.runtimeconfig.json
+/Users/JB/Documents/codingDojo/cStack/fundamentals1/bin/Debug/netcoreapp2.1/fundamentals1.runtimeconfig.dev.json
+/Users/JB/Documents/codingDojo/cStack/fundamentals1/bin/Debug/netcoreapp2.1/fundamentals1.dll
+/Users/JB/Documents/codingDojo/cStack/fundamentals1/bin/Debug/netcoreapp2.1/fundamentals1.pdb
+/Users/JB/Documents/codingDojo/cStack/fundamentals1/obj/Debug/netcoreapp2.1/fundamentals1.csprojAssemblyReference.cache
+/Users/JB/Documents/codingDojo/cStack/fundamentals1/obj/Debug/netcoreapp2.1/fundamentals1.csproj.CoreCompileInputs.cache
+/Users/JB/Documents/codingDojo/cStack/fundamentals1/obj/Debug/netcoreapp2.1/fundamentals1.AssemblyInfoInputs.cache
+/Users/JB/Documents/codingDojo/cStack/fundamentals1/obj/Debug/netcoreapp2.1/fundamentals1.AssemblyInfo.cs
+/Users/JB/Documents/codingDojo/cStack/fundamentals1/obj/Debug/netcoreapp2.1/fundamentals1.dll
+/Users/JB/Documents/codingDojo/cStack/fundamentals1/obj/Debug/netcoreapp2.1/fundamentals1.pdb

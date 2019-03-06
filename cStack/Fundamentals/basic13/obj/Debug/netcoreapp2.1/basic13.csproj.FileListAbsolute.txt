@@ -1,0 +1,11 @@
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/basic13/obj/Debug/netcoreapp2.1/basic13.csprojAssemblyReference.cache
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/basic13/obj/Debug/netcoreapp2.1/basic13.csproj.CoreCompileInputs.cache
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/basic13/obj/Debug/netcoreapp2.1/basic13.AssemblyInfoInputs.cache
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/basic13/obj/Debug/netcoreapp2.1/basic13.AssemblyInfo.cs
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/basic13/bin/Debug/netcoreapp2.1/basic13.deps.json
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/basic13/bin/Debug/netcoreapp2.1/basic13.runtimeconfig.json
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/basic13/bin/Debug/netcoreapp2.1/basic13.runtimeconfig.dev.json
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/basic13/bin/Debug/netcoreapp2.1/basic13.dll
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/basic13/bin/Debug/netcoreapp2.1/basic13.pdb
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/basic13/obj/Debug/netcoreapp2.1/basic13.dll
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/basic13/obj/Debug/netcoreapp2.1/basic13.pdb
