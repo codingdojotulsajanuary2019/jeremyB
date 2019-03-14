@@ -1,0 +1,63 @@
+*{
+    padding: 0px;
+    margin: 0px auto;
+    background-color: pink; 
+}
+
+.header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.body h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.photo{
+    margin-left:100px;
+    display: inline-block;
+}
+
+.body img{
+    width: 500px;
+}
+
+.info{
+    width: 500px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 70px;
+}
+
+.contact h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact form{
+    margin-left: 40%
+}
+
+.projects h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.overflow{
+    overflow: scroll;
+}
+
+.project{
+    width: 400px;
+    margin-left: 40px;
+}
+
+.project img{
+    display: inline-block;
+    width: 200px;
+}
+
+.project_text{
+    display: inline-block;
+}

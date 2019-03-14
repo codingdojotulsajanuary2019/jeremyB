@@ -1,0 +1,37 @@
+@using dojoSurvey.Models
+@model surveyResults
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Result</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+  <section class="section">
+    <div class="box">
+      <h1 class="title">
+        Submitted Info:
+      </h1>
+      <div class="columns">
+        <div class="column is-3">
+          <p>Your Name:</p>
+          <p>Your Dojo:</p>
+          <p>Your Language:</p>
+          <p>Your Comment:</p>
+        </div>
+        <div class="column is-half">
+          <p>@Model.name</p>
+          <p>@Model.location</p>
+          <p>@Model.language</p>
+          <p>@Model.comment</p>
+        </div>
+      </div>
+      <a href="/" class="button is-success">Go Back</a>
+    </div>
+  </section>
+  </body>
+</html>

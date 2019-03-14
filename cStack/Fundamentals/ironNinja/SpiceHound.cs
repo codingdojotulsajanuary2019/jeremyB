@@ -1,0 +1,40 @@
+using System;
+
+namespace ironNinja
+{
+    class SpiceHound : Ninja
+    {
+        // provide override for IsFull (Full at 1200 Calories)
+        public override bool IsFull{
+            get{
+                if (calorieIntake >= 1500)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+        }
+        public override void Consume(IConsumable item)
+        {
+            // provide override for Consume
+            if(IsFull == true)
+            {
+                Console.WriteLine("Spice Hound is Full");
+            }
+            if(IsFull == false)
+            {
+                this.calorieIntake += item.Calories;
+                if(item.IsSpicy == true)
+                {
+                    this.calorieIntake -= 10;
+                }
+                this.ConsumptionHistory.Add(item);
+                Console.WriteLine($"{this} just consumed {item.GetInfo()}");
+                Console.WriteLine($"{this} has eaten {this.calorieIntake} today");
+            }
+        }
+    }
+}

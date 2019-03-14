@@ -1,0 +1,58 @@
+﻿@model User
+<section class="section">
+    <div class="column is-7">
+        <div class="box">
+            <h1 class="title">Enter your Information</h1>
+            <form action="result" method="post">
+                <div class="field is-horizontal">
+                    <div class="field-label">
+                        <label class="label">First Name</label>
+                    </div>
+                    <div class="field-body">
+                        <span asp-validation-for="fname"></span>
+                        <input type="text" class="input" name="fname">
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label">
+                        <label class="label">Last Name</label>
+                    </div>
+                    <div class="field-body">
+                        <span asp-validation-for="lname"></span>
+                        <input type="text" class="input" name="lname">
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label">
+                        <label class="label">Age</label>
+                    </div>
+                    <div class="field-body">
+                        <span asp-validation-for="age"></span>
+                        <input type="text" class="input" name="age">
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label">
+                        <label class="label">Email Address</label>
+                    </div>
+                    <div class="field-body">
+                        <span asp-validation-for="email"></span>
+                        <input type="text" class="input" name="email">
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label">
+                        <label class="label">Password</label>
+                    </div>
+                    <div class="field-body">
+                        <span asp-validation-for="password"></span>
+                        <input type="text" class="input" name="password">
+                    </div>
+                </div>
+                <button class="button is-primary">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</section>

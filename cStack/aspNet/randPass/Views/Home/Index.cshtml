@@ -1,0 +1,23 @@
+﻿@model randPass.Models.Password;
+
+<div class="container">
+    <div class="section">
+        <h1 class="title">Random Passcode</h1>
+        <h2 class="subtitle">Attempt number @ViewBag.count</h2>
+        <div class="column is-6">
+            <div class="box has-background-dark has-text-white">
+            @{
+                string password = "";
+                foreach(var x in @Model.pwordArr)
+                {
+                    password += x;
+                }
+                <p>@password</p>
+            }
+                <hr>
+                <a href="/" class="button has-text-dark is-primary">Generate</a>
+                <a href="/reset" class="button is-danger has-text-dark">Reset</a>
+            </div>
+        </div>
+    </div>
+</div>

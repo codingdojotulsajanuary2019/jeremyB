@@ -1,0 +1,7 @@
+@using vmFun.Models
+@model List<User>
+<h1>Here are some people</h1>
+@foreach(var peep in Model)
+{
+    <p>@peep.FirstName @peep.LastName</p>
+}

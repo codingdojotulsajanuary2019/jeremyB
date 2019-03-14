@@ -1,0 +1,24 @@
+﻿@model Quote
+<div class="container">
+    <h1 class="title">Welcome to Quoting Dojo</h1>
+    <form action="/create" method="post">
+        <div class="field is-horizontal">
+            <div class="field-label">
+                <label asp-for="name" class="label">Your name:</label>
+            </div>
+            <div class="field-body">
+                <input asp-for="name" class="input">
+            </div>
+        </div>
+        <div class="field is-horizontal">
+            <div class="field-label">
+                <label asp-for="content" class="label">Your quote:</label>
+            </div>
+            <div class="field-body">
+                <textarea class="textarea" asp-for="content" cols="10" rows="4"></textarea>
+            </div>
+        </div>
+        <button type="submit" class="button is-primary">Add my quote!</button>
+        <a href="/quotes" class="button">Skip to quotes!</a>
+    </form>
+</div>

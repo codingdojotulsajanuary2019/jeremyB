@@ -1,0 +1,11 @@
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/wizards/bin/Debug/netcoreapp2.1/wizards.deps.json
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/wizards/bin/Debug/netcoreapp2.1/wizards.runtimeconfig.json
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/wizards/bin/Debug/netcoreapp2.1/wizards.runtimeconfig.dev.json
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/wizards/bin/Debug/netcoreapp2.1/wizards.dll
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/wizards/bin/Debug/netcoreapp2.1/wizards.pdb
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/wizards/obj/Debug/netcoreapp2.1/wizards.csprojAssemblyReference.cache
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/wizards/obj/Debug/netcoreapp2.1/wizards.csproj.CoreCompileInputs.cache
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/wizards/obj/Debug/netcoreapp2.1/wizards.AssemblyInfoInputs.cache
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/wizards/obj/Debug/netcoreapp2.1/wizards.AssemblyInfo.cs
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/wizards/obj/Debug/netcoreapp2.1/wizards.dll
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/wizards/obj/Debug/netcoreapp2.1/wizards.pdb

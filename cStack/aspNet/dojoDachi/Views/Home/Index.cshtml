@@ -1,0 +1,48 @@
+﻿@using dojoDachi.Models
+@model Dachi
+
+<div class="container">
+    <div class="section">
+        <div class="columns">
+            <div class="column">
+                <h2 class="subtitle">Fullness: @Model.full</h2>
+            </div>
+            <div class="column">
+                <h2 class="subtitle">Happiness: @Model.happy</h2>
+            </div>
+            <div class="column">
+                <h2 class="subtitle">Energy: @Model.energy</h2>
+            </div>
+            <div class="column">
+                <h2 class="subtitle">Meals: @Model.meal</h2>
+            </div>
+        </div>
+        <div class="box has-text-centered has-background-dark has-text-white">
+            <img src="~/images/effie.jpg" alt="dachi" style="width:30%">
+            <p>@ViewBag.Message</p>
+        </div>
+        @{
+            if((@Model.happy == 0 || @Model.full == 0) || (@Model.full == 100 && @Model.energy == 100))
+            {
+                <a href="/reset" class="button is-warning">Restart</a>
+            }
+            else
+            {
+            <div class="columns">
+                <div class="column">
+                    <a href="/feed" class="button is-warning">Feed</a>
+                </div>
+                <div class="column">
+                    <a href="/play" class="button is-success has-text-dark">Play</a>
+                </div>
+                <div class="column">
+                    <a href="/work" class="button is-danger has-text-dark">Work</a>
+                </div>
+                <div class="column">
+                    <a href="/sleep" class="button is-primary has-text-dark">Sleep</a>
+                </div>
+            </div>
+            }
+        }
+    </div>
+</div>

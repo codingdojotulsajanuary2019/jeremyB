@@ -1,0 +1,45 @@
+@model Dish
+
+<div class="container">
+    <h1 class="title">Add a new dish!</h1>
+    <a href="/">Home</a>
+    <div class="box">
+        <form asp-action="Update" asp-controller="Home" method="post">
+            <div class="columns">
+                <div class="column">
+                    <span asp-validation-for="Chef"></span>
+                    <label asp-for="Chef" class="label">Chef Name</label>
+                    <input asp-for="Chef" class="input" value="@Model.Chef">
+                    
+                    <span asp-validation-for="Name"></span>
+                    <label asp-for="Name" class="label">Dish Name</label>
+                    <input asp-for="Name" class="input" value="@Model.Name">
+                    
+                    <span asp-validation-for="Calories"></span>
+                    <label asp-for="Calories" class="label">Calories</label>
+                    <input asp-for="Calories" class="input" value="@Model.Calories">
+                </div>
+                <div class="column">
+                    <span asp-validation-for="Tastiness"></span>
+                    <label asp-for="Tastiness" class="label">Tastiness</label>
+                    <div class="select">
+                        <select asp-for="Tastiness" value="@Model.Tastiness">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="column">
+                    <span asp-validation-for="Description"></span>
+                    <label asp-for="Description" class="label">Description</label>
+                    <textarea asp-for="Description" rows="4" class="textarea">@Model.Description</textarea>
+                    <br>
+                    <button type="submit" class="button is-primary">Edit Dish</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

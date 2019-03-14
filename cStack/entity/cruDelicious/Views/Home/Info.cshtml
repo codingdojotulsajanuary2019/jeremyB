@@ -1,0 +1,17 @@
+@using cruDelicious.Models
+@model Dish
+
+<div class="container">
+    <a href="/">Home</a>
+    <h1 class="title">@Model.Name</h1>
+    <h2 class="subtitle">@Model.Chef</h2>
+    <hr>
+    <p>@Model.Description</p>
+    <p>Calories:@Model.Calories</p>
+    <p>Tastiness:@Model.Tastiness</p>
+    <div class="level">
+        <a href="/delete/@Model.DishId" class="button is-danger">Delete</a>
+        <a href="/edit/@Model.DishId" class="button is-warning">Edit</a>
+    </div>
+
+</div>

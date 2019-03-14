@@ -1,0 +1,11 @@
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/multiTable/bin/Debug/netcoreapp2.1/multiTable.deps.json
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/multiTable/bin/Debug/netcoreapp2.1/multiTable.runtimeconfig.json
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/multiTable/bin/Debug/netcoreapp2.1/multiTable.runtimeconfig.dev.json
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/multiTable/bin/Debug/netcoreapp2.1/multiTable.dll
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/multiTable/bin/Debug/netcoreapp2.1/multiTable.pdb
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/multiTable/obj/Debug/netcoreapp2.1/multiTable.csprojAssemblyReference.cache
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/multiTable/obj/Debug/netcoreapp2.1/multiTable.csproj.CoreCompileInputs.cache
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/multiTable/obj/Debug/netcoreapp2.1/multiTable.AssemblyInfoInputs.cache
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/multiTable/obj/Debug/netcoreapp2.1/multiTable.AssemblyInfo.cs
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/multiTable/obj/Debug/netcoreapp2.1/multiTable.dll
+/Users/JB/Documents/codingDojo/cStack/Fundamentals/multiTable/obj/Debug/netcoreapp2.1/multiTable.pdb
