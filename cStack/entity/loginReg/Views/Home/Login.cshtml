@@ -1,0 +1,36 @@
+@model User
+<div class="container has-background-dark">
+    <div class="columns is-centered has-background-primary">
+        <div class="column is-half">
+            <div class="level">
+                <h1 class="title has-text-dark">Registration</h1>
+                <h2><a href="/">Register</a></h2>
+            </div>
+        </div>
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <div class="box has-text-centered">
+                <form asp-action="Attempt" asp-controller="Home"  method="post">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <span asp-validation-for="Email"></span>
+                                    <label asp-for="Email" class="label">Email</label>
+                                    <input asp-for="Email" class="input">
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <span asp-validation-for="Password"></span>
+                                    <label asp-for="Password" class="label">Password</label>
+                                    <input asp-for="Password" class="input">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="button is-primary">Login now!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

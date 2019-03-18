@@ -1,0 +1,47 @@
+﻿@using chefDishes.Models
+@model allChef
+
+<div class="section has-background-dark">
+    <div class="navbar columns is-vcentered has-background-primary is-rounded">
+        <div class="column is-10 has-text-centered">
+            <div>
+                <h1 class="title">Chefs | <a href="/dishes">Dishes</a></h1>
+            </div>
+        </div>
+        <div class="column has-text-centered">
+            <div>
+                <a href="/new">Add a Chef!</a>
+            </div>
+        </div>
+    </div>
+    <div class="section has-background-dark">
+        <div class="columns is-centered">
+            <div class="column is-three-quarters">
+                <div class="box">
+                    <h2 class="subtitle">Check out our roster of Chefs!</h2>
+                    <hr>
+                    <table class="table is-bordered is-fullwidth is-striped is-hoverable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th># of Dishes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(var chef in @Model.chefList)
+                            {
+                                int age = (@DateTime.Now.Year - @chef.dob.Year);
+                                <tr>
+                                    <td>@chef.fName @chef.lName</td>
+                                    <td>@age</td>
+                                    <td>@chef.Dishes.Count()</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

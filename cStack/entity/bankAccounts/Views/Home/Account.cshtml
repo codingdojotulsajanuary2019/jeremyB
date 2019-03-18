@@ -1,0 +1,61 @@
+@model UserTransaction
+<div class="container has-background-dark">
+    <div class="columns is-centered has-background-primary">
+        <div class="column is-half">
+            <h1 class="title has-text-dark">Welcome, @Model.loggedUser.fName</h1>
+        </div>
+        <div class="column">
+                <p>Current Balance: @Model.loggedUser.Balance</p>
+
+        </div>
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <form asp-action="NewTransaction" asp-controller="Home" method="post">
+                <div class="level">
+                    <div class="level-item has-text-white">
+                        <span asp-validation-for="newTrans.Amount"></span>
+                        <label asp-for="newTrans.Amount"></label>
+                        <input asp-for="newTrans.Amount" class="input">
+
+                        <input type="hidden" name="newTrans.UserId" value="@Model.loggedUser.UserId">
+                    </div>
+                    <div class="level-item">
+                        <div class="field">
+                            <button type="submit" class="button is-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form> 
+        </div>
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-three-quarters">
+            <div class="box">
+                <table class="table is-bordered is-fullwidth is-striped is-hoverable">
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            var transList = @Model.loggedUser.Transactions;
+                            transList.Reverse();
+                            foreach(var trans in transList)
+                            {
+                                <tr>
+                                    <td>@trans.Amount</td>
+                                    <td>@trans.CreatedAt</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+                <h2><a href="/logout">Logout</a></h2>
+            </div>
+        </div>
+    </div>
+    
+</div>

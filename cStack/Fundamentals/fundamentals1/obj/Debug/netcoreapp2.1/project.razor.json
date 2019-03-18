@@ -1,14 +1,6 @@
 {
-  "ProjectFilePath": "/Users/JB/Documents/codingDojo/cStack/fundamentals1/fundamentals1.csproj",
+  "ProjectFilePath": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/fundamentals1/fundamentals1.csproj",
   "TargetFramework": "netcoreapp2.1",
   "TagHelpers": [],
-  "Configuration": {
-    "ConfigurationName": "UnsupportedRazor",
-    "LanguageVersion": "1.0",
-    "Extensions": [
-      {
-        "ExtensionName": "UnsupportedRazorExtension"
-      }
-    ]
-  }
+  "Configuration": null
 }

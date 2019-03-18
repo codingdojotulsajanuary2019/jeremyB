@@ -1,0 +1,48 @@
+@using chefDishes.Models
+@model allDish
+
+<div class="section has-background-dark">
+    <div class="navbar columns is-vcentered has-background-primary is-rounded">
+        <div class="column is-10 has-text-centered">
+            <div>
+                <h1 class="title"><a href="/">Chefs</a> | Dishes</h1>
+            </div>
+        </div>
+        <div class="column has-text-centered">
+            <div>
+                <a href="dishes/new">Add a Dish!</a>
+            </div>
+        </div>
+    </div>
+    <div class="section has-background-dark">
+        <div class="columns is-centered">
+            <div class="column is-three-quarters">
+                <div class="box">
+                    <h2 class="subtitle">Take a look at our gross food!</h2>
+                    <hr>
+                    <table class="table is-bordered is-fullwidth is-striped is-hoverable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Chef</th>
+                                <th>Tastiness</th>
+                                <th>Calories</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(var dish in @Model.dishList)
+                            {
+                                <tr>
+                                    <td>@dish.DishName</td>
+                                    <td>@dish.creator.fName @dish.creator.lName</td>
+                                    <td>@dish.taste</td>
+                                    <td>@dish.cal</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

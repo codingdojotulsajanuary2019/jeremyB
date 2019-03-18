@@ -1,0 +1,49 @@
+@using chefDishes.Models
+@model Chef
+
+<div class="section has-background-dark">
+    <div class="navbar columns is-vcentered has-background-primary">
+        <div class="column is-10 has-text-centered">
+            <div>
+                <h1 class="title">Add a new Chef!</h1>
+            </div>
+        </div>
+        <div class="column has-text-centered">
+            <div>
+                <a href="/">Home</a>
+            </div>
+        </div>
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <div class="box">
+                <form asp-action="New" asp-controller="New" method="post">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field">
+                                <span asp-validation-for="fName"></span>
+                                <label asp-for="fName" class="label"></label>
+                                <input asp-for="fName" class="input">
+                            </div>
+                            <div class="field">
+                                <span asp-validation-for="lName"></span>
+                                <label asp-for="lName" class="label"></label>
+                                <input asp-for="lName" class="input">
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="field">
+                                <span asp-validation-for="dob"></span>
+                                <label asp-for="dob" class="label"></label>
+                                <input asp-for="dob" type="Date" class="input">
+                            </div>
+                            <div class="field">
+                                <button type="submit" class="button is-primary">Add Chef</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

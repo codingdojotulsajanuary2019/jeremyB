@@ -9,21 +9,21 @@
                 <div class="column">
                     <span asp-validation-for="Chef"></span>
                     <label asp-for="Chef" class="label">Chef Name</label>
-                    <input asp-for="Chef" class="input" value="@Model.Chef">
+                    <input asp-for="Chef" class="input" >
                     
                     <span asp-validation-for="Name"></span>
                     <label asp-for="Name" class="label">Dish Name</label>
-                    <input asp-for="Name" class="input" value="@Model.Name">
+                    <input asp-for="Name" class="input">
                     
                     <span asp-validation-for="Calories"></span>
                     <label asp-for="Calories" class="label">Calories</label>
-                    <input asp-for="Calories" class="input" value="@Model.Calories">
+                    <input asp-for="Calories" class="input">
                 </div>
                 <div class="column">
                     <span asp-validation-for="Tastiness"></span>
                     <label asp-for="Tastiness" class="label">Tastiness</label>
                     <div class="select">
-                        <select asp-for="Tastiness" value="@Model.Tastiness">
+                        <select asp-for="Tastiness">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -35,7 +35,7 @@
                 <div class="column">
                     <span asp-validation-for="Description"></span>
                     <label asp-for="Description" class="label">Description</label>
-                    <textarea asp-for="Description" rows="4" class="textarea">@Model.Description</textarea>
+                    <textarea asp-for="Description" rows="4" class="textarea"></textarea>
                     <br>
                     <button type="submit" class="button is-primary">Edit Dish</button>
                 </div>

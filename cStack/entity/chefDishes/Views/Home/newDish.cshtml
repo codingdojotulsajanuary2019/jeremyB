@@ -1,0 +1,64 @@
+@model AllModels
+<div class="section has-background-dark">
+    <div class="navbar columns is-vcentered has-background-primary">
+        <div class="column is-10 has-text-centered">
+            <h1 class="title">Add a new dish!</h1>
+        </div>
+        <div class="column">
+            <a href="/dishes">Home</a>
+        </div>
+    </div>
+    <div class="box">
+        <form asp-action="AddDish" asp-controller="Home" method="post">
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <span asp-validation-for="newDish.DishName"></span>
+                        <label asp-for="newDish.DishName" class="label"></label>
+                        <input asp-for="newDish.DishName" class="input">
+                    </div>
+                    <div class="field">
+                        <span asp-validation-for="newDish.cal"></span>
+                        <label asp-for="newDish.cal" class="label"></label>
+                        <input asp-for="newDish.cal" class="input">
+                    </div>
+                    <div class="field">
+                        <span asp-validation-for="newDish.Description"></span>
+                        <label asp-for="newDish.Description" class="label"></label>
+                        <textarea asp-for="newDish.Description" rows="4" class="textarea"></textarea>
+                    </div>
+                </div>
+                <div class="column">
+                    <span asp-validation-for="newDish.ChefId"></span>
+                    <label asp-for="newDish.ChefId" class="label"></label>
+                    <div class="select">
+                        <select asp-for="newDish.ChefId">
+                            @foreach (var chef in @Model.allChefs)
+                            {
+                                <option value="@chef.ChefId">@chef.fName @chef.lName</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <span asp-validation-for="newDish.taste"></span>
+                        <label asp-for="newDish.taste" class="label"></label>
+                        <div class="select">
+                            <select asp-for="newDish.taste">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <button type="submit" class="button is-primary">Add Dish</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

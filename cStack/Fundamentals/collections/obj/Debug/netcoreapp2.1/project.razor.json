@@ -1,14 +1,6 @@
 {
-  "ProjectFilePath": "/Users/JB/Documents/codingDojo/cStack/collections/collections.csproj",
+  "ProjectFilePath": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/collections/collections.csproj",
   "TargetFramework": "netcoreapp2.1",
   "TagHelpers": [],
-  "Configuration": {
-    "ConfigurationName": "UnsupportedRazor",
-    "LanguageVersion": "1.0",
-    "Extensions": [
-      {
-        "ExtensionName": "UnsupportedRazorExtension"
-      }
-    ]
-  }
+  "Configuration": null
 }
