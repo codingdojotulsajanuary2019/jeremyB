@@ -1,0 +1,89 @@
+﻿@using brightIdeas.Models
+@model LoginRegVM
+<div class="container">
+    <div class="section has-background-primary">
+        <div class="navbar is-primary">
+            <div class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <h1 class="title">Welcome to Bright Ideas!</h1>
+                    </div>
+                </div>
+                <div class="level-right">
+                    <div class="level-item">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section has-background-dark">
+        <div class="box has-text-centered">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="subtitle">Register</h1>
+                    <form asp-action="Register" asp-controller="User"  method="post">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <span asp-validation-for="newUser.Name" class="has-text-danger is-size-7"></span>
+                                    <label asp-for="newUser.Name" class="label"></label>
+                                    <input asp-for="newUser.Name" class="input">
+                                </div>
+                                <div class="field">
+                                    <span asp-validation-for="newUser.Alias"  class="has-text-danger is-size-7"></span>
+                                    <label asp-for="newUser.Alias" class="label"></label>
+                                    <input asp-for="newUser.Alias" class="input">
+                                </div>
+                                <div class="field">
+                                    <span asp-validation-for="newUser.Email"  class="has-text-danger is-size-7"></span>
+                                    <label asp-for="newUser.Email" class="label"></label>
+                                    <input asp-for="newUser.Email" class="input">
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <span asp-validation-for="newUser.Password"  class="has-text-danger is-size-7"></span>
+                                    <label asp-for="newUser.Password" class="label"></label>
+                                    <input asp-for="newUser.Password" class="input">
+                                </div>
+                                <div class="field">
+                                    <span asp-validation-for="newUser.Confirm" class="has-text-danger is-size-7"></span>
+                                    <label asp-for="newUser.Confirm" class="label"></label>
+                                    <input asp-for="newUser.Confirm" class="input">
+                                </div>
+                                <div class="field">
+                                    <button type="submit" class="button is-primary">Register</button>
+                                </div>
+                            </div>
+                        </div>
+                </form>
+                </div>
+                <div class="divider"></div>
+                <div class="column">
+                    <h1 class="subtitle">Login</h1>
+                    <form asp-action="Login" asp-controller="User"  method="post">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <span asp-validation-for="logUser.Email" class="has-text-danger is-size-7"></span>
+                                    <label asp-for="logUser.Email" class="label"></label>
+                                    <input asp-for="logUser.Email" class="input">
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <span asp-validation-for="logUser.Password" class="has-text-danger is-size-7"></span>
+                                    <label asp-for="logUser.Password" class="label"></label>
+                                    <input asp-for="logUser.Password" class="input">
+                                </div>
+                            </div>
+                        </div>
+                    <button type="submit" class="button is-primary">Login</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/JB/Documents/codingDojo/cStack/SecondCSharp/SecondCSharp.csproj",
+      "projectUniqueName": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/SecondCSharp/SecondCSharp.csproj",
       "projectName": "SecondCSharp",
-      "projectPath": "/Users/JB/Documents/codingDojo/cStack/SecondCSharp/SecondCSharp.csproj",
+      "projectPath": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/SecondCSharp/SecondCSharp.csproj",
       "packagesPath": "/Users/JB/.nuget/packages/",
-      "outputPath": "/Users/JB/Documents/codingDojo/cStack/SecondCSharp/obj/",
+      "outputPath": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/SecondCSharp/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

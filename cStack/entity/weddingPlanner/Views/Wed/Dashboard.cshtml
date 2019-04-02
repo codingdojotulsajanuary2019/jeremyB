@@ -1,0 +1,55 @@
+@using weddingPlanner.Models
+@model DashVM
+
+<div class="container">
+    <div class="section has-background-primary">
+        <div class="navbar is-primary">
+            <div class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <h1 class="title">Welcome to wedding planner!</h1>
+                    </div>
+                </div>
+                <div class="level-right offset-right">
+                    <div class="level-item has-text-right">
+                        <a href="logout">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section has-background-dark">
+        <div class="box has-text-centered">
+            <table class="table is-bordered is-fullwidth is-striped is-hoverable">
+                <thead>
+                    <tr>
+                        <th>Wedding</th>
+                        <th>Date</th>
+                        <th>Guests</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var thisWed in @Model.weddingList)
+                    {
+                        <tr>
+                            <td><a href="/wedding/@thisWed.weddingId">@thisWed.wedOne & @thisWed.wedTwo</a></td>
+                            <td>@thisWed.date.ToString("dd MMM yyy")</td>
+                            <td>@thisWed.guests.Count()</td>
+                            @if(thisWed.creator.UserId == Model.creator.UserId) {
+                                <td><a href="/delete/@thisWed.weddingId">Delete</a></td>
+                            }
+                            else if(thisWed.guests.Any(g => g.userId == Model.creator.UserId)) {
+                                <td><a href="/unattend/@thisWed.weddingId">Un-RSVP</a></td>
+                            }
+                            else {
+                                <td><a href="/attend/@thisWed.weddingId">RSVP</a></td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="new" class="button is-primary offset-right">New Wedding</a>
+        </div>
+    </div>
+</div>

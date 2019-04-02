@@ -1,0 +1,52 @@
+@model ActVM
+<div class="container">
+    <div class="section has-background-primary">
+        <div class="navbar is-primary">
+            <div class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <h1 class="title">Dojo Activity Center</h1>
+                    </div>
+                </div>
+                <div class="level-right offset-right">
+                    <div class="level-item">
+                        <a href="/home">Home</a>
+                    </div>
+                    <div class="level-item">
+                        <a href="/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section has-background-dark">
+        <div class="box">
+            <h1 class="title">@Model.thisEvent.title</h1>
+            @if(@Model.thisUser.UserId == @Model.thisEvent.creator.UserId)
+            {
+                <a href="/delete/@Model.thisEvent.eventId" class="button is-primary">Delete</a>
+            }
+            else if(@Model.thisEvent.participants.Any(p => p.userId == @Model.thisUser.UserId))
+            {
+                <a href="/leave/@Model.thisEvent.eventId" class="button is-primary">Leave</a>
+            }
+            else
+            {
+                <a href="../../join/@Model.thisEvent.eventId" class="button is-primary">Join</a>
+            }
+            <br>
+            <br>
+                <h2 class="subtitle">Event Coordinator: @Model.thisEvent.creator.fName</h2>
+                <h2 class="subtitle">Description</h2>
+                <p>@Model.thisEvent.desc</p>
+                <br>
+                <h2 class="subtitle">
+                    Participants:
+                </h2>
+                    @foreach(var p in @Model.thisEvent.participants)
+                    {
+                       <p>@p.theUser.fName</p>
+                    }
+        </div>
+    </div>
+</div>

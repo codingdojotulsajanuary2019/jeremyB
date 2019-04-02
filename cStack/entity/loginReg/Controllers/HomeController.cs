@@ -31,14 +31,22 @@ public class HomeController : Controller
         {
             if(ModelState.IsValid)
             {
-                PasswordHasher<User> hasher = new PasswordHasher<User>();
-                newUser.Password = hasher.HashPassword(newUser, newUser.Password);
-                dbContext.Add(newUser);
-                dbContext.SaveChanges();
-                HttpContext.Session.SetString("email", newUser.Email);
-                string checker = HttpContext.Session.GetString("email");
-                System.Console.WriteLine(checker);
-                return RedirectToAction("Success");
+                if(dbContext.Users.Any(u => u.Email == newUser.Email))
+                {
+                    ModelState.AddModelError("Email", "Email already in use!");
+                    return View("Index");
+                }
+                else
+                {
+                    PasswordHasher<User> hasher = new PasswordHasher<User>();
+                    newUser.Password = hasher.HashPassword(newUser, newUser.Password);
+                    dbContext.Add(newUser);
+                    dbContext.SaveChanges();
+                    HttpContext.Session.SetString("email", newUser.Email);
+                    string checker = HttpContext.Session.GetString("email");
+                    System.Console.WriteLine(checker);
+                    return RedirectToAction("Success");
+                }
             }
             else
             {
@@ -57,21 +65,21 @@ public class HomeController : Controller
         {
             if(ModelState.IsValid)
             {
-                var userDb = dbContext.Users.FirstOrDefault(u => u.Email == userInfo.Email);
+                var userDb = dbContext.Users.FirstOrDefault(u => u.Email == userInfo.lEmail);
                 if(userDb == null)
                 {
                     ModelState.AddModelError("Email", "Invalid Email/Password");
                     return View("Login");
                 }
                 var hasher = new PasswordHasher<LoginUser>();
-                var result = hasher.VerifyHashedPassword(userInfo, userDb.Password, userInfo.Password);
+                var result = hasher.VerifyHashedPassword(userInfo, userDb.Password, userInfo.lPassword);
                 if (result == 0)
                 {
                     ModelState.AddModelError("Email", "Invalid Email/Password");
                     return View("Login");
                 }
                 // PUT IN CODE HERE FOR SESSION BULLSHIT
-                HttpContext.Session.SetString("email", userInfo.Email);
+                HttpContext.Session.SetString("email", userInfo.lEmail);
                 return RedirectToAction("Success");
             }
             else

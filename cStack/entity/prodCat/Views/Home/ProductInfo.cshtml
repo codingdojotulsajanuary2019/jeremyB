@@ -1,0 +1,51 @@
+@using prodCat.Models
+@model ProdInfoView
+
+<div class="section  has-text-centered is-9">
+    <div class="columns is-centered has-background-primary">
+        <div class="column is-9">
+            <h1 class="title">@Model.thisProduct.name</a></h1>
+        </div>
+        <div class="column">
+            <a href="/products">Go back</a>
+        </div>
+    </div>
+</div>
+<div class="section" style="margin-top:-20px">
+    <div class="box">
+        <div class="columns">
+            <div class="column">
+                <h2 class="subtitle">
+                    Categories:
+                </h2>
+                @foreach (var cat in @Model.thisProduct.prodCategories)
+                {
+                    <p>- @cat.category.name</p>
+                }
+            </div>
+            <div class="divider"></div>
+            <div class="column">
+                <h3 class="subtitle">
+                    Add Category:
+                </h3>
+                <form asp-action="AddCat" asp-controller="Home" method="post">
+                    <div class="field">
+                        <div class="select">
+                            <select asp-for="newPair.categoryId">
+                                <option value="">Categories</option>
+                                @foreach (var infoCat in @Model.catList)
+                                {
+                                    <option value="@infoCat.categoryId">@infoCat.name</option>
+                                }
+                            </select>
+                        </div>
+                        <input type="hidden" asp-for="newPair.productId" value="@Model.thisProduct.productId">
+                    </div>
+                    <div class="field">
+                        <button type="submit" class="button is-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

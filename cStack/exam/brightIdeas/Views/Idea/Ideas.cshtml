@@ -1,0 +1,68 @@
+@model IdeaVM
+<div class="container">
+    <div class="section has-background-primary">
+        <div class="navbar is-primary">
+            <div class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <h1 class="title">Welcome @Model.thisUser.Alias, to Bright Ideas!</h1>
+                    </div>
+                </div>
+                <div class="level-right offset-right">
+                    <div class="level-item">
+                        <a href="/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section has-background-dark">
+        <div class="box">
+            <div class="columns">
+                <div class="column is-three-fifths">
+                    <h2 class="subtitle">What's your bright idea?</h2>
+                    <form asp-action="Add" asp-controller="Idea"  method="post">
+                        <div class="field">
+                            <span asp-validation-for="newIdea.content" class="has-text-danger is-size-7"></span>
+                            <textarea asp-for="newIdea.content" class="textarea" rows="2"></textarea>
+                        </div>
+                        <div class="field">
+                            <button type="submit" class="button is-primary">Add secret!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="section">
+            @{
+                @foreach(var id in @Model.allIdea)
+                {
+                    <div class="columns is-vcentered">
+                        <div class="column is-2">
+                            <p><a href="/user/@id.creator.UserId">@id.creator.Alias</a> says:</p>
+                        </div>
+                        <div class="column">
+                            <p class="idea">@id.content</p>
+                            @if(id.creator.UserId == @Model.thisUser.UserId && id.likes.Any(l => l.userId == Model.thisUser.UserId))
+                            {
+                                <p><a href="/ideas/@id.ideaId">@id.likes.Count people </a> like this.<span class="spacer"></span><a href="/delete/@id.ideaId" class="spacer">Delete</a></p>
+                            }
+                            else if (id.creator.UserId == Model.thisUser.UserId)
+                            {
+                                <p><a href="/like/@id.ideaId" class="spacer">Like</a><a href="/ideas/@id.ideaId">@id.likes.Count people </a> like this.<span class="spacer"></span><a href="/delete/@id.ideaId" class="spacer">Delete</a></p>
+                            }
+                            else if (id.likes.Any(l => l.userId == Model.thisUser.UserId))
+                            {
+                                <p><a href="/ideas/@id.ideaId">@id.likes.Count people </a> like this.</p>
+                            }
+                            else
+                            {
+                                <p><a href="/like/@id.ideaId" class="spacer">Like</a> <a href="/ideas/@id.ideaId">@id.likes.Count people </a> like this.</p>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+            </div>
+        </div>
+    </div>
+<div

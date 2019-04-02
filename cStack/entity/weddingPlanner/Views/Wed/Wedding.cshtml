@@ -1,0 +1,41 @@
+@using weddingPlanner.Models
+@model Wedding
+<div class="container">
+    <div class="section has-background-primary">
+        <div class="navbar is-primary">
+            <div class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <h1 class="title">@Model.wedOne & @Model.wedTwo's Wedding</h1>
+                    </div>
+                </div>
+                <div class="level-right offset-right">
+                    <div class="level-item has-text-right">
+                        <a href="../dashboard">Dashboard</a>
+                    </div>
+                    <div class="level-item">
+                        <a href="../logout">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section has-background-dark">
+        <div class="columns">
+            <div class="column">
+                <div class="box">
+                    <div class="content">
+                        <h2 class="subtitle">Date: @Model.date</h2>
+                        <h2 class="subtitle">Address: @Model.address</h2>
+                        <h3 class="subtitle">Guests:</h3>
+                        <ul>
+                            @foreach(var g in @Model.guests)
+                            {
+                                <li>@g.user.fName @g.user.lName</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

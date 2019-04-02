@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/JB/Documents/codingDojo/cStack/testProj/testProj.csproj",
+      "projectUniqueName": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/testProj/testProj.csproj",
       "projectName": "testProj",
-      "projectPath": "/Users/JB/Documents/codingDojo/cStack/testProj/testProj.csproj",
+      "projectPath": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/testProj/testProj.csproj",
       "packagesPath": "/Users/JB/.nuget/packages/",
-      "outputPath": "/Users/JB/Documents/codingDojo/cStack/testProj/obj/",
+      "outputPath": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/testProj/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

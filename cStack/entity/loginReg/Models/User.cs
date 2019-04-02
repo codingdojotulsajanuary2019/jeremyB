@@ -32,7 +32,7 @@ namespace loginReg.Models
 
     public class LoginUser
     {
-        public string Email {get;set;}
-        public string Password {get;set;}
+        public string lEmail {get;set;}
+        public string lPassword {get;set;}
     }
 }

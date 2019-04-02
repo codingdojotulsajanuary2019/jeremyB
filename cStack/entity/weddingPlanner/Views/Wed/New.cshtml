@@ -1,0 +1,54 @@
+@using weddingPlanner.Models
+@model Wedding
+<div class="container">
+    <div class="section has-background-primary">
+        <div class="navbar is-primary">
+            <div class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <h1 class="title">Plan your wedding!</h1>
+                    </div>
+                </div>
+                <div class="level-right offset-right">
+                    <div class="level-item has-text-right">
+                        <a href="dashboard">Dashboard</a>
+                        <a href="logout">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section has-background-dark">
+        <div class="columns">
+            <div class="column is-half">
+                <div class="box">
+                    <form asp-action="New" asp-controller="Wed" method="post">
+                        <div class="field">
+                            <span asp-validation-for="wedOne"  class="has-text-danger is-size-7"></span>
+                            <label asp-for="wedOne" class="label">Wedder One</label>
+                            <input asp-for="wedOne" class="input">
+                        </div>
+                        <div class="field">
+                            <span asp-validation-for="wedTwo"  class="has-text-danger is-size-7"></span>
+                            <label asp-for="wedTwo" class="label">Wedder Two</label>
+                            <input asp-for="wedTwo" class="input">
+                        </div>
+                        <div class="field">
+                            <span asp-validation-for="date"  class="has-text-danger is-size-7"></span>
+                            <label asp-for="date" class="label">Date</label>
+                            <input asp-for="date" type="date" class="input">
+                        </div>
+                        <div class="field">
+                            <span asp-validation-for="address"  class="has-text-danger is-size-7"></span>
+                            <label asp-for="address" class="label">Address</label>
+                            <input asp-for="address" class="input">
+                        </div>
+                        <div class="field">
+                            <button type="submit" class="button is-primary">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

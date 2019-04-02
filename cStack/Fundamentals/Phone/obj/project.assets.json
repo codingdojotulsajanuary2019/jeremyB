@@ -681,23 +681,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/skylarmacias/.nuget/packages/": {},
+    "/Users/JB/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/skylarmacias/Documents/Coding_Dojo_Projects/C#_Stack/Overview/Phone/Phone.csproj",
+      "projectUniqueName": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/Phone/Phone.csproj",
       "projectName": "Phone",
-      "projectPath": "/Users/skylarmacias/Documents/Coding_Dojo_Projects/C#_Stack/Overview/Phone/Phone.csproj",
-      "packagesPath": "/Users/skylarmacias/.nuget/packages/",
-      "outputPath": "/Users/skylarmacias/Documents/Coding_Dojo_Projects/C#_Stack/Overview/Phone/obj/",
+      "projectPath": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/Phone/Phone.csproj",
+      "packagesPath": "/Users/JB/.nuget/packages/",
+      "outputPath": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/Phone/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/skylarmacias/.nuget/NuGet/NuGet.Config"
+        "/Users/JB/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"

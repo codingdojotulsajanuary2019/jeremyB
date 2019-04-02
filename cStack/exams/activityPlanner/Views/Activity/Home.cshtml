@@ -1,0 +1,66 @@
+@model HomeVM
+<div class="container">
+    <div class="section has-background-primary">
+        <div class="navbar is-primary">
+            <div class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <h1 class="title">Dojo Activity Center</h1>
+                    </div>
+                </div>
+                <div class="level-right offset-right">
+                    <div class="level-item">
+                        <p>Welcome @Model.thisUser.fName!</p>
+                    </div>
+                    <div class="level-item">
+                        <a href="/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section has-background-dark">
+        <div class="box">
+            <div class="section">
+                <table class="table is-bordered is-fullwidth is-striped is-hoverable">
+                    <thead>
+                        <tr>
+                            <th>Activity</th>
+                            <th>Date & Time</th>
+                            <th>Duration</th>
+                            <th>Event Coordinator</th>
+                            <th>Number of Participants</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var ev in @Model.allEvent)
+                        {
+                            <tr>
+                                <td><a href="../activity/@ev.eventId">@ev.title</a></td>
+                                <td>@ev.fullDT.ToString("MM/dd/yy") at @ev.fullDT.ToString("h:mm tt")</td>
+                                <td>@ev.durInt @ev.durVal</td>
+                                <td>@ev.creator.fName</td>
+                                <td>@ev.participants.Count</td>
+                                @if(@Model.thisUser.UserId == @ev.creator.UserId)
+                                {
+                                    <td><a href="/delete/@ev.eventId">Delete</a></td>
+                                }
+                                else if(@ev.participants.Any(p => p.userId == @Model.thisUser.UserId))
+                                {
+                                    <td><a href="/leave/@ev.eventId">Leave</a></td>
+                                }
+                                else
+                                {
+                                    <td><a href="/join/@ev.eventId">Join</a></td>
+                                }
+                                
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <a href="../new" class="button is-primary">Add New Activity!</a>
+        </div>
+    </div>
+<div

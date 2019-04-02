@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/JB/Documents/codingDojo/cStack/collections/collections.csproj",
+      "projectUniqueName": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/collections/collections.csproj",
       "projectName": "collections",
-      "projectPath": "/Users/JB/Documents/codingDojo/cStack/collections/collections.csproj",
+      "projectPath": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/collections/collections.csproj",
       "packagesPath": "/Users/JB/.nuget/packages/",
-      "outputPath": "/Users/JB/Documents/codingDojo/cStack/collections/obj/",
+      "outputPath": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/collections/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

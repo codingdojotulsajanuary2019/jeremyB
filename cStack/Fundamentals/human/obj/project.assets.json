@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/JB/Documents/codingDojo/cStack/human/human.csproj",
+      "projectUniqueName": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/human/human.csproj",
       "projectName": "human",
-      "projectPath": "/Users/JB/Documents/codingDojo/cStack/human/human.csproj",
+      "projectPath": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/human/human.csproj",
       "packagesPath": "/Users/JB/.nuget/packages/",
-      "outputPath": "/Users/JB/Documents/codingDojo/cStack/human/obj/",
+      "outputPath": "/Users/JB/Documents/codingDojo/cStack/Fundamentals/human/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

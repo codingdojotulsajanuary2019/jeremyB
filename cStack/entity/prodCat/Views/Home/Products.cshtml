@@ -1,0 +1,65 @@
+@using prodCat.Models
+@model ProdNewView
+
+<div class="section  has-text-centered is-9">
+    <div class="columns is-centered has-background-primary">
+        <div class="column is-9">
+            <h1 class="title">Products</a> | <a href="/categories">Categories</a></h1>
+        </div>
+    </div>
+</div>
+<div class="section" style="margin-top:-20px">
+    <div class="box">
+        <div class="columns">
+            <div class="column is-6">
+                <h2 class="title has-text-centered">New Product</h2>
+                <form asp-action="newProd" asp-controller="Home" method="post">
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <span asp-validation-for="newProduct.name" class="has-text-danger is-size-7"></span>
+                            <label asp-for="newProduct.name" class="label"></label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <input asp-for="newProduct.name" class="input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <span asp-validation-for="newProduct.desc" class="has-text-danger is-size-7"></span>
+                            <label asp-for="newProduct.desc" class="label"></label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <textarea asp-for="newProduct.desc" class="textarea" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <span asp-validation-for="newProduct.price" class="has-text-danger is-size-7"></span>
+                            <label asp-for="newProduct.price" class="label"></label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <input asp-for="newProduct.price" class="input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <button type="submit" class="button is-primary">Create</button>
+                    </div>
+                </form>
+            </div>
+            <div class="divider"></div>
+            <div class="column">
+                <h2 class="title has-text-centered">Existing Products</h2>
+                @foreach(var prod in @Model.prodList)
+                {
+                    <p><a href="products/@prod.productId">@prod.name</a></p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

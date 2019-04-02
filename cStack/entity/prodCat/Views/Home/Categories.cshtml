@@ -1,0 +1,36 @@
+@using prodCat.Models
+@model CatNewView
+<div class="section has-background-primary has-text-centered is-9">
+    <div class="columns is-centered">
+        <div class="column is-9">
+            <h1 class="title"><a href="/products">Products</a> | Categories</a></h1>
+        </div>
+    </div>
+</div>
+<div class="section" style="margin-top:-20px">
+    <div class="box">
+        <div class="columns">
+            <div class="column is-6">
+                <h2 class="title has-text-centered">New Category</h2>
+                <form asp-action="newCat" asp-controller="Home" method="post">
+                    <div class="field">
+                        <span asp-validation-for="newCategory.name" class="has-text-danger is-size-7"></span>
+                        <label asp-for="newCategory.name" class="label"></label>
+                        <input asp-for="newCategory.name" class="input">
+                    </div>
+                    <div class="field">
+                        <button type="submit" class="button is-primary">Create</button>
+                    </div>
+                </form>
+            </div>
+            <div class="divider"></div>
+            <div class="column">
+                <h2 class="title has-text-centered">Existing Categories</h2>
+                @foreach(var cat in @Model.catList)
+                {
+                    <p><a href="categories/@cat.categoryId">@cat.name</a></p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

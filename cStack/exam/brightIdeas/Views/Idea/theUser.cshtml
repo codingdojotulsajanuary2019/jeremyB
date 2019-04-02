@@ -1,0 +1,32 @@
+@model UserVM
+<div class="container">
+    <div class="section has-background-primary">
+        <div class="navbar is-primary">
+            <div class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <h1 class="title">Chek this guy out!</h1>
+                    </div>
+                </div>
+                <div class="level-right offset-right spacer">
+                    <div class="level-item ">
+                        <a href="/ideas" class="spacer">Bright Ideas</a>
+                        <a href="/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section has-background-dark">
+        <div class="box">
+            <div class="section">
+                <p>Name: @Model.thisUser.Name</p>
+                <p>Alias: @Model.thisUser.Alias</p>
+                <p>Email: @Model.thisUser.Email</p>
+                <hr>
+                <p>Total Number of Posts: @Model.thisUser.created.Count</p>
+                <p>Total Number of Likes: @Model.userLikes.Count</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+@model Event
+<div class="container">
+    <div class="section has-background-primary">
+        <div class="navbar is-primary">
+            <div class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <h1 class="title">Dojo Activity Center</h1>
+                    </div>
+                </div>
+                <div class="level-right offset-right">
+                    <div class="level-item">
+                        <a href="/home">Home</a>
+                    </div>
+                    <div class="level-item">
+                        <a href="/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section has-background-dark">
+        <div class="box">
+            <form asp-action="Add" asp-controller="Activity" method="post">
+                <div class="columns">
+                    <div class="column">
+                        <div class="field">
+                            <span asp-validation-for="title" class="has-text-danger is-size-7"></span>
+                            <label asp-for="title" class="label"></label>
+                            <input asp-for="title" class="input">
+                        </div>
+                        <div class="field">
+                            <span asp-validation-for="date" class="has-text-danger is-size-7"></span>
+                            <label asp-for="date" class="label"></label>
+                            <input asp-for="date" class="input">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <span asp-validation-for="time" class="has-text-danger is-size-7"></span>
+                            <label asp-for="time" class="label"></label>
+                            <input asp-for="time" class="input">
+                        </div>
+                        <div class="field">
+                            <span asp-validation-for="durInt" class="has-text-danger is-size-7"></span>
+                            <label asp-for="durInt" class="label"></label>
+                            <input asp-for="durInt" class="input">
+                            <select asp-for="durVal">
+                                <option value="Days">Days</option>
+                                <option value="Hours">Hours</option>
+                                <option value="Minutes">Minutes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <span asp-validation-for="desc" class="has-text-danger is-size-7"></span>
+                    <label asp-for="desc" class="label"></label>
+                    <textarea asp-for="desc" class="textarea" rows="2"></textarea>
+                </div>
+                <div class="field">
+                    <button type="submit" class="button is-primary">Create Activity</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
