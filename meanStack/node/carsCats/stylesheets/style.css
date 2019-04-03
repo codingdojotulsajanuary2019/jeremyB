@@ -1,0 +1,26 @@
+img{
+    width: 300px;
+}
+
+.card{
+    background-color: salmon;
+    padding: 10px;
+}
+
+input{
+    margin-left: 30px;
+}
+label{
+    margin-left: 30px;
+}
+
+#car_name{
+    margin-left: 50px;
+}
+#location{
+    margin-left: 50px;
+}
+
+.card .white{
+    background-color: white;
+}
