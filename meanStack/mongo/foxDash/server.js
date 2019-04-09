@@ -55,7 +55,7 @@ app.post('/foxes', function(req, res) {
             res.render('new', {errors: fox.errors})
         }
         else {
-            console.log("Successfully addeed a fox!");
+            console.log("Successfully added a fox!");
             res.redirect('/');
         }
     })
@@ -75,12 +75,12 @@ app.get('/foxes/:id', function(req, res){
     })
 })
 //Edit fox display
-app.get('foxes/edit/:id', function(req, res) {
+app.get('/foxes/edit/:id', function(req, res) {
     console.log("edit page");
     console.log(req.params.id);
     Fox.findOne({_id:req.params.id}, function(err, fox) {
         if(err) {
-            return console.log(err);
+            console.log(err);
         }
         else {
             console.log(fox);
@@ -89,7 +89,8 @@ app.get('foxes/edit/:id', function(req, res) {
     })
 })
 //Update fox information
-app.post('foxes/:id', function(req, res) {
+app.post('/foxes/:id', function(req, res) {
+    console.log("update route");
     console.log("POST DATA", req.body);
     Fox.update({_id:req.params.id},
         { name: req.body.name,
@@ -97,6 +98,7 @@ app.post('foxes/:id', function(req, res) {
         food: req.body.food},
         function(err) {
             if(err) {
+                console.log("error");
                 console.log(err);
                 res.redirect(`foxes/edit/${req.params.id}`)
             }
@@ -107,9 +109,9 @@ app.post('foxes/:id', function(req, res) {
         })
 })
 //Delete a fox
-app.post('foxes/destroy/:id', function(req, rest) {
+app.post('/foxes/destroy/:id', function(req, res) {
     console.log("Delete route")
-    Fox.remove({_id:req.pararms.id}, function(err) {
+    Fox.deleteOne({_id:req.params.id}, function(err) {
         if(err){
             console.log(err);
             res.redirect('/');
