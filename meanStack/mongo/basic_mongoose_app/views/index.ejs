@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body class="teal">
+    <div class="card">
+        <div class="row">
+            <div class="col s4 z-depth-3" style="margin:5px; padding:10px">
+                <form action="/users" method="post">
+                    Name: <input type="text" name="name">
+                    Age: <input type="number" name="age">
+                    <input type="submit" class="btn" value="create user">
+                </form>
+            </div>
+            <div class="col">
+                <% console.log(users) %>
+                <% console.log("hello") %>
+                <% for (var x in users) { %>
+                    <h4>User:</h4>
+                    <% console.log(x); %>
+                    <p><%= users[x].name %></p>
+                    <p><%= users[x].age %></p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

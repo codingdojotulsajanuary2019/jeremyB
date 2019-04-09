@@ -1,0 +1,46 @@
+use my_first_db
+
+db.createCollection("students")
+
+db.students.insert({name:"Jeremy", home_state:"Texas", lucky_number: 42, birthday:{month: 11, day: 3, year:1990}})
+db.students.insert({name:"Jarred", home_state:"Alaska", lucky_number: 13, birthday:{month: 12, day: 25, year:1980}})
+db.students.insert({name:"Kyle", home_state:"Hawaii", lucky_number:666, birthday:{month: 4, day: 1, year:1985}})
+db.students.insert({name:"Thomas", home_state:"Missouri", lucky_number:10, birthday:{month: 4, day: 20, year:1995}})
+db.students.insert({name:"George", home_state:"Delaware", lucky_number:1776, birthday:{month: 2, day: 4, year:1750}})
+
+db.students.find()
+
+db.students.find({$or: [{home_state: "Texas"}, {home_state: "Alaska"}]}).pretty()
+
+db.students.find({lucky_number: {$gt: 3}}).pretty()
+db.students.find({lucky_number: {$lte: 10}}).pretty()
+db.students.find({lucky_number: {$lte: 13, $gte:1}})
+
+db.students.updateMany( { }, {$set: {"interests":['coding', 'brunch', 'MongoDB']}})
+db.students.update( { }, {$set: {potato:"idaho"}}, {multi: true})
+
+db.students.update({name:"Jeremy"},{$push: {interests:"dogs"}})
+db.students.update({name:"Jarred"},{$push: {interests:"subs"}})
+db.students.update({name:"Kyle"},{$push: {interests:"hats"}})
+db.students.update({name:"Thomas"},{$push: {interests:"cpus"}})
+db.students.update({name:"George"},{$push: {interests:"democracy"}})
+
+db.students.update({name:"George"},{$push: {interests:"taxes"}})
+
+db.students.update({name:"George"},{$pull: {interests:"taxes"}})
+
+db.students.remove({home_state:"Missouri"})
+
+db.students.remove({name:"Kyle"})
+
+db.students.remove({lucky_number: {$gt: 5}}, true)
+
+db.students.update({},{$set: {number_of_belts:0}}, {multi: true})
+
+db.students.update({home_state:"Alaska"},{$inc: {number_of_belts:1}}, {multi: true})
+
+db.students.update({},{$rename: {number_of_belts:"belts_earned"}}, {multi: true})
+
+db.students.update({}, {$unset: {lucky_number:""}}, {multi:true})
+
+db.students.update( { }, {$currentDate: {updated_on:{$type:"date"}}}, {multi: true})
