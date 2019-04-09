@@ -16,9 +16,9 @@ const flash = require('express-flash');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/basic_mongoose');
 var FoxSchema = new mongoose.Schema({
-    name: {type: String, required: true, minlength:2},
-    age: {type: Number, min:1, max: 20},
-    food: {type: String, required: true, minlength:4}
+    name: {type: String, required: [true, 'Need a name!'], minlength:[2, "Name must be more than 2 characters long"]},
+    age: {type: Number, min:1, max: [20, "Foxes only live until 20"]},
+    food: {type: String, required: [true, "Gotta eat something"], minlength:4}
    }, {timestamps: true});
    mongoose.model('Fox', FoxSchema); // We are setting this Schema in our Models as 'User'
    var Fox = mongoose.model('Fox') // We are retrieving this Schema from our Models, named 'User'

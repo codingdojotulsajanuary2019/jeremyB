@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Message Bored</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body class="teal">
+    <div class="card padded">
+        <h3>The Dojo Message Bored</h3>
+        <div class="divider"></div>
+        <div class="container">
+            <form action="/addMess" method="post">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="Mname" name="Mname" type="text">
+                        <label for="Mname">Name</label>
+                    </div>
+                    <div class="input-field col s10">
+                        <textarea id="Mcontent" name="Mcontent" class="materialize-textarea"></textarea>
+                        <label for="Mcontent">Message</label>
+                    </div>
+                    <div class="input-field col">
+                        <button type="submit" class="btn">Post Message</button>
+                    </div>
+                </div>
+            </form>
+            <div class="divider"></div>
+            <div class="row">
+                <% for (var x in messages) { %>
+                    <% console.log("messages") %>
+                    <% console.log(messages) %>
+                    <div class="col s11">
+                        <h5>Name: <%= messages[x].Mname %></h5>
+                        <h5>Message: <%= messages[x].Mcontent %></h5>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="col s8 offset-s1">
+                        <% if (messages[x].comments.length != 0) { %>
+                            <% for (var y=0; y < messages[x].comments.length; y++) { %> 
+                                <div class="container">
+                                        <% console.log("comments of y") %>
+                                        <% console.log(y) %>
+                                        <% console.log(messages[x].comments[y]) %>
+                                    <p>Name: <%= messages[x].comments[y].Cname %></p>
+                                    <p>Comment: <%= messages[x].comments[y].Ccontent %> </p>
+                                    <br>
+                                    <div class="divider"></div>
+                                
+                                </div>
+                            <% } %>
+                        <% } %>
+                        <form action="/addComm" method="post">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="Cname" name="Cname" type="text">
+                                    <label for="Cname">Name</label>
+                                </div>
+                                <div class="input-field col s10">
+                                    <textarea id="Ccontent" name="Ccontent" class="materialize-textarea"></textarea>
+                                    <label for="Ccontent">Message</label>
+                                </div>
+                                <div class="input-field col">
+                                    <input type="hidden" name="id" value="<%= messages[x]._id %>">
+                                    <button type="submit" class="btn">Post Comment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
