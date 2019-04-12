@@ -12,6 +12,15 @@ var path = require('path');
 app.use(express.static(path.join(__dirname, './static')));
 
 const flash = require('express-flash');
+app.use(flash ());
+
+var session = require('express-session');
+app.use(session({
+    secret: "potato",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {maxAge: 6000}
+}));
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/basic_mongoose');
@@ -51,11 +60,13 @@ app.post('/foxes', function(req, res) {
     fox.save(function(err) {
         if(err) {
             console.log("Something went wrong");
+            console.log(err);
             console.log(fox.errors);
             res.render('new', {errors: fox.errors})
         }
         else {
             console.log("Successfully added a fox!");
+            console.log(fox.errors);
             res.redirect('/');
         }
     })
@@ -89,18 +100,22 @@ app.get('/foxes/edit/:id', function(req, res) {
     })
 })
 //Update fox information
+var opts = { runValidators: true };
+
 app.post('/foxes/:id', function(req, res) {
     console.log("update route");
     console.log("POST DATA", req.body);
     Fox.update({_id:req.params.id},
         { name: req.body.name,
         age: req.body.age,
-        food: req.body.food},
+        food: req.body.food }, opts, 
         function(err) {
             if(err) {
-                console.log("error");
-                console.log(err);
-                res.redirect(`foxes/edit/${req.params.id}`)
+                for(var key in err.errors) {
+                    console.log(err.errors[key].message);
+                    req.flash('invalid', err.errors[key].message);
+                }
+                res.redirect(`/foxes/edit/${req.params.id}`);
             }
             else {
                 console.log("Successfully updated a fox!");

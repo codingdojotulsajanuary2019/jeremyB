@@ -21,12 +21,11 @@
                     <a href="/" class="btn waves-effect waves-light">to Dash!</a>
                 </div>
             </div>
-                <% if(messages.invalid) { %>
+                <% if(typeof(errors) != 'undefined' ) { %>
                     <span style="color: red">Something went wrong</span>
-                    <% for (var x in messages.invalid) { %>
-                        <% console.log(messages.invalid) %>
-                        <% console.log(x) %>
-                     <p><%= messages.invalid[x] %></p>
+                    <% for (var x in errors) { %>
+                        <% console.log(errors[x].message) %>
+                     <p><%= errors[x].message %></p>
                     <% } %>
                 <% } %>
             <form action="/foxes/<%= fox._id %>" method="POST" class="col s12">

@@ -1,0 +1,33 @@
+<body>
+
+  <div class="container">
+    <h3>Your gold: {{total}}</h3>
+    <div class="row">
+      <div class="col-sm">
+        <h3>Farm</h3>
+        <p>Earn 10-20 gold</p>
+        <button class="btn btn-primary" (click)="findGold('farm')">Find Gold!</button>
+      </div>
+      <div class="col-sm">
+        <h3>Caves</h3>
+        <p>Earn 5-10 gold</p>
+        <button class="btn btn-primary" (click)="findGold('caves')">Find Gold!</button>
+      </div>
+      <div class="col-sm">
+        <h3>House</h3>
+        <p>Earn 2-5 gold</p>
+        <button class="btn btn-primary" (click)="findGold('house')">Find Gold!</button>
+      </div>
+      <div class="col-sm">
+        <h3>Casino</h3>
+        <p>Earns / takes 0-50 gold</p>
+        <button class="btn btn-primary" (click)="findGold('casino')">Find Gold!</button>
+      </div>
+    </div>
+    <hr class="my-4">
+    <h3>Log:</h3>
+    <ul>
+      <li *ngFor="let action of log">{{action}}</li>
+    </ul>
+    <a href="/" class="btn btn-primary">New Game</a>
+  </div>

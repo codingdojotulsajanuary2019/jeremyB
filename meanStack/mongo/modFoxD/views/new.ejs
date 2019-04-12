@@ -21,35 +21,34 @@
                     <a href="/" class="btn waves-effect waves-light">to Dash!</a>
                 </div>
             </div>
-                <% if(messages.invalid) { %>
+                <% if(typeof(errors) != 'undefined' ) { %>
                     <span style="color: red">Something went wrong</span>
-                    <% for (var x in messages.invalid) { %>
-                        <% console.log(messages.invalid) %>
-                        <% console.log(x) %>
-                     <p><%= messages.invalid[x] %></p>
+                    <% for (var x in errors) { %>
+                        <% console.log(errors[x].message) %>
+                     <p><%= errors[x].message %></p>
                     <% } %>
                 <% } %>
-            <form action="/foxes/<%= fox._id %>" method="POST" class="col s12">
+            <form action="/foxes" method="POST" class="col s12">
                 <div class="row">
                     <div class="input-field col s9">
-                        <input id="name" name="name" type="text" value="<%=fox.name %>">
+                        <input id="name" name="name" type="text">
                         <label for="name">Name</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s9">
-                        <input id="age" name="age" type="text" value="<%=fox.age %>">
+                        <input id="age" name="age" type="text">
                         <label for="age">Age</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s9">
-                        <input id="food" name="food" type="text" value="<%=fox.food %>">
+                        <input id="food" name="food" type="text">
                         <label for="food">Favorite Food</label>
                     </div>
                 </div>
                 <div class="col s5">
-                    <button type="submit" class="btn">Edit Fox!</button>
+                    <button type="submit" class="btn">Add Fox!</button>
                 </div>
             </form>
         </div>
