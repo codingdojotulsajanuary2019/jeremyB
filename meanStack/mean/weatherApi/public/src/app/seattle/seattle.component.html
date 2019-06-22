@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col s10">
+      <div class="info">
+        <h4>Weather in {{ info.name }}</h4>
+        <div class="row">
+          <div class="col s5 image">
+            <img src="https://cdn.vox-cdn.com/thumbor/unwBcW1Cwh9D3Wy5994l_ba0n7Q=/165x0:2831x2000/1200x675/filters:focal(165x0:2831x2000)/cdn.vox-cdn.com/uploads/chorus_image/image/50883391/eatersea0916_space_needle_shutterstock_dibrova.0.0.jpg" alt="seattle">
+          </div>
+          <div class="col s5">
+            <ul>
+              <li>Forecast: {{info.weather[0].main}}</li>
+              <li>Temperature: {{info.main.temp }}°F</li>
+              <li>Humidity: {{info.main.humidity }}%</li>
+              <li>High: {{info.main.temp_max}}°F</li>
+              <li>Low: {{info.main.temp_min}}°F</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,16 @@
+<div class="card" style="padding:20px">
+  <div class="center-align">
+    <h2>Dojo Weather Forecast</h2>
+    <ul class="list-inline">
+      <li><a [routerLink]="['/']">Home</a> |</li>
+      <li><a [routerLink]="['/tulsa']">Tulsa</a> |</li>
+      <li><a [routerLink]="['/dallas']">Dallas</a> |</li>
+      <li><a [routerLink]="['/chicago']">Chicago</a> |</li>
+      <li><a [routerLink]="['/seattle']">Seattle</a> |</li>
+      <li><a [routerLink]="['/burbank']">Burbank</a> |</li>
+      <li><a [routerLink]="['/washington']">Washington D.C.</a></li>
+    </ul>
+    <div class="divider"></div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

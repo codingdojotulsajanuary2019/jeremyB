@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col s10">
+      <div class="info">
+        <h4>Weather in {{ info.name }}</h4>
+        <div class="row">
+          <div class="col s5 image">
+            <img src="https://www.snopes.com/tachyon/2018/02/chicago_feature.jpg?resize=865,452" alt="chicago">
+          </div>
+          <div class="col s5">
+            <ul>
+              <li>Forecast: {{info.weather[0].main}}</li>
+              <li>Temperature: {{info.main.temp }}°F</li>
+              <li>Humidity: {{info.main.humidity }}%</li>
+              <li>High: {{info.main.temp_max}}°F</li>
+              <li>Low: {{info.main.temp_min}}°F</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* border: 1px pink solid; */
+    }
+
+div.footer {
+    background-color:#e6e6e6;
+    height: 70px;
+    width: 850px;
+    vertical-align: bottom;
+    display: block;
+    text-align: center;
+}
+div.footer p{
+    font-family: Helvetica;
+    font-size: 16px;
+    margin-bottom: 7px;
+    padding: 5px;
+}
+div.footer img{
+    width: 20px;
+    vertical-align: middle;
+    
+}
+div.footer a{
+    font-family: Helvetica;
+    font-size: 16px;
+    
+}

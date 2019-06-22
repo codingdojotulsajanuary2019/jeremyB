@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="divider"></div>
+  <h5>Submit a movie and review</h5>
+  <div *ngIf="errors">
+    {{errors.message}}
+  </div>
+  <form (submit)="newMovie(newmovie)">
+    <div *ngIf="title.errors && (title.dirty || title.touched)">
+      <div [hidden]="!title.errors.required">
+        <p>Title is required!</p>
+      </div>
+      <div [hidden]="!title.errors.minlength">
+        <p>Title must be 3 characters long.</p>
+      </div>
+    </div>
+    <div *ngIf="yourname.errors && (yourname.dirty || yourname.touched)">
+      <div [hidden]="!yourname.errors.required">
+        <p>Name is required!</p>
+      </div>
+      <div [hidden]="!yourname.errors.minlength">
+        <p>Name must be 3 characters long.</p>
+      </div>
+    </div>
+    <div *ngIf="comment.errors && (comment.dirty || comment.touched)">
+      <div [hidden]="!comment.errors.required">
+        <p>Review is required!</p>
+      </div>
+      <div [hidden]="!comment.errors.minlength">
+        <p>Review must be 3 characters long.</p>
+      </div>
+    </div>
+    <div class="input-field">
+      <input type="text" name="title" required minlength="3" [(ngModel)]="newmovie.title" #title="ngModel">
+      <label>Movie Title</label>
+    </div>
+    <div class="input-field">
+      <input type="text" name="newmovie.review[0].name" required minlength="3" [(ngModel)]="newmovie.review[0].name" #yourname="ngModel">
+      <label>Your Name</label>
+    </div>
+    <div class="input-field">
+      <span class="labelText">Stars</span>
+      <select class="browser-default" name="newmovie.review[0].stars" [(ngModel)]="newmovie.review[0].stars">
+        <option value=""> </option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div class="input-field">
+        <textarea class="materialize-textarea" required minlength="3" #comment="ngModel" name="newmovie.review[0].comment" [(ngModel)]="newmovie.review[0].comment"></textarea>
+        <label>Your review</label>
+    </div>
+    <div class="input-field">
+      <input type="submit" value="Submit" class="btn">
+      <button [routerLink]="['/']" class="btn">Cancel</button>
+    </div>
+  </form>
+</div>

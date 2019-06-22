@@ -1,0 +1,29 @@
+<div>
+  <form (submit)="newReview(info)">
+    <div class="row">
+      <div class="col s6">
+        <div class="input-field">
+          Rating
+          <select class="browser-default" name="info.rate" [(ngModel)]="info.rate">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="input-field">
+          <textarea class="materialize-textarea"name="info.comment" [(ngModel)]="info.comment"></textarea>
+          <label>Comments here</label>
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="input-field">
+          <input type="submit" value="Create Review" class="btn">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

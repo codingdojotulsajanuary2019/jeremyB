@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+.padded{
+    padding: 15px;
+}
+
+.bold{
+    font-weight: bold;
+    font-weight: 20px;
+}
+
+.labelText {
+    color: gray;
+    font-size: 14px;
+}
+
+p{
+    color: red;
+}

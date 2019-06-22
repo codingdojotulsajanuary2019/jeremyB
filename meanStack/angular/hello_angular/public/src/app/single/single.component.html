@@ -1,0 +1,36 @@
+<div *ngIf='taskToShow' class="container">
+  <div class="row">
+    <div class="col s5">
+      <h5>You asked for more data, so here it is:</h5>
+      <ul>
+        <li>Name: {{taskToShow.title}}</li>
+        <li>Description: {{taskToShow.description}}</li>
+        <li>Completed: {{taskToShow.completed}}</li>
+        <li>Created at: {{taskToShow.createdAt | date:dateFormat }}</li>
+      </ul>
+    </div>
+    <div class="col s5">
+      <form (submit)="editTask(newInfo)">
+          <div class="input-field">
+            <input type="text" name="title" value="{{taskToShow.title}}" [(ngModel)]="newInfo.title" >
+            <label class="active">Title</label>
+          </div>
+          <div class="input-field">
+            <input type="text"  name="description" value="{{taskToShow.description}}" [(ngModel)]="newInfo.description" >
+            <label class="active">Description</label>
+          </div>
+          <div class="input-field">
+            <select class="browser-default" name="completed" value="{{taskToShow.completed}}" [(ngModel)]="newInfo.completed">
+              <option value="false">I suck</option>
+              <option value="true">Yes</option>
+            </select>
+            <label class="active">Completed</label>
+          </div>
+          <div class="input-field">
+            <input type="submit" value="Edit Task" class="btn">
+          </div>
+      </form>
+    </div>
+  </div>
+  <br>
+</div>

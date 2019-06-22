@@ -1,0 +1,18 @@
+<div class="card" style="padding:20px">
+  <nav>
+    <div class="nav-wrapper valign-wrapper">
+      <img src="../assets/egg.png" alt="egg" class="ib" style="max-height:60px; margin:5px">
+      <h5 class="ib">Brunch Coin</h5>
+      <ul class="right ib" style="margin-left:350px">
+        <li><a [routerLink]="['/']">Home</a></li>
+        <li><a [routerLink]="['/mine']">Mine Coins</a></li>
+        <li><a [routerLink]="['/buy']">Buy Coins</a></li>
+        <li><a [routerLink]="['/sell']">Sell Coins</a></li>
+        <li><a [routerLink]="['/browse']">Browse Ledger</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="center-align" style="border: 2px solid pink">
+    <router-outlet></router-outlet>
+  </div>
+</div>

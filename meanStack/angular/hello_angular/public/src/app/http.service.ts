@@ -5,18 +5,33 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpService {
-  constructor(private _http: HttpClient) {
-    this.getTasks();
-    this.getOneTask();
-  }
+
+  constructor(private _http: HttpClient) { }
+
   getTasks(){
-    console.log("Get Tasks Route");
-    let allTasks = this._http.get('/tasks');
-    allTasks.subscribe(data => console.log("Tasks:", data));
+    console.log("get Tasks on Service");
+    return this._http.get('/tasks');
   }
-  getOneTask(){
-    console.log("Get One Task");
-    let oneTask = this._http.get('/Test');
-    oneTask.subscribe(data => console.log("A task:", data));
+  getOneTask(title: String){
+    console.log("get 1 task on Service");
+    console.log(title);
+    return this._http.get(`/${title}`);
+  }
+  addTask(newtask){
+    console.log("Add task on service");
+    console.log(newtask);
+    return this._http.post('/tasks', newtask);
+  }
+  editTask(newinfo){
+    console.log("Edit task on service");
+    console.log(newinfo.newinfo);
+    console.log(newinfo.newinfo.title);
+    return this._http.put(`/${newinfo.newinfo.title}`, newinfo);
+  }
+  deleteTask(delInfo){
+    console.log("Delete task on service");
+    console.log(delInfo);
+    return this._http.delete(`/${delInfo.delId}`, delInfo);
+
   }
 }

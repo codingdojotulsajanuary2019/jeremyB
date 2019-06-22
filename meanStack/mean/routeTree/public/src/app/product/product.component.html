@@ -1,0 +1,12 @@
+<div class="container" style="border: purple 3px solid">
+    <h4>Product Route</h4>
+    <div class="container">
+        <button class="btn" [routerLink]="['details', 33]">Product Detail</button>
+        <button class="btn" [routerLink]="['category','potato' ]">Product Category</button>
+        <button class="btn" [routerLink]="['brand', 'nintendo']">Brand Info</button>
+     </div>
+    <div style="padding:10px">
+      <router-outlet></router-outlet>
+    </div>
+ </div>
+ 

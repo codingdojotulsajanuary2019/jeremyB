@@ -1,0 +1,13 @@
+<div class="container">
+    <a [routerLink]="['/']">Home</a>
+    <div class="divider"></div>
+    <form (submit)=addAuthor(newauthor)>
+      <div class="input-field">
+        <input type="text" name="newauthor.name" [(ngModel)]="newauthor.name">
+        <label>Name</label>
+      </div>
+      <div class="input-field">
+        <input type="submit" value="Add Author" class="btn">
+      </div>
+    </form>
+</div>

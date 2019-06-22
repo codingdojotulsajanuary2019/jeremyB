@@ -1,0 +1,43 @@
+<div class="card" style="padding:20px">
+  <h3>Rate my Beers!</h3>
+  <div class="divider"></div>
+  <div class="section">
+    <div class="row">
+      <div class="col s4" style="border: 1px grey; padding: 10px">
+        <h5>Submit a beer to be rated</h5>
+        <div class="divider"></div>
+        <form (submit)="newBeer(beer)">
+          <div class="input-field">
+            <input type="text" name="beer.brewer" [(ngModel)]="beer.brewer">
+            <label>Brewer name:</label>
+          </div>
+          <div class="input-field">
+              <input type="text" name="beer.img" [(ngModel)]="beer.img">
+              <label>Image url:</label>
+          </div>
+          <div class="input-field">
+            <input type="submit" value="Add Beer" class="btn">
+          </div>
+        </form>
+      </div>
+      <div class="col s8" style="max-height: 400px; overflow:scroll">
+        <div *ngFor="let beer of beers">
+            <div class="section">
+              <div class="rows">
+                <div class="col s3">
+                  <img (click)=showBeer(beer) [src]="beer.img" alt="beerImg" style="height:200px;width:150px">
+                </div>
+                <div class="col s9">
+                  <app-review [beer]='beer'></app-review>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <app-show-one *ngIf="beerClicked" [beer]="beerClicked"></app-show-one>
+  </div>
+</div>

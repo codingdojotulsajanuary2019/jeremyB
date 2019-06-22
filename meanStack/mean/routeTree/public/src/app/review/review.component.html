@@ -1,0 +1,11 @@
+<div class="container" style="border: orange 3px solid">
+   <h4>Review Route</h4>
+   <div class="container">
+      <button class="btn" [routerLink]="['details', 42]">Review Detail</button>
+      <button class="btn" [routerLink]="['author', 12]">Atuhor Info</button>
+      <button class="btn" [routerLink]="['all', 3]">All Reviews</button>
+   </div>
+   <div style="padding:10px">
+     <router-outlet></router-outlet>
+   </div>
+</div>

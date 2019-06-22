@@ -1,0 +1,47 @@
+<div class="container">
+  <h5>Add a review for {{movie.movie.title}}</h5>
+  <form (submit)="newReview(info)">
+    <div *ngIf="yourname.errors && (yourname.dirty || yourname.touched)">
+      <div [hidden]="!yourname.errors.required">
+        <p>Name is required!</p>
+      </div>
+      <div [hidden]="!yourname.errors.minlength">
+        <p>Name must be 3 characters long.</p>
+      </div>
+    </div>
+    <div *ngIf="comment.errors && (comment.dirty || comment.touched)">
+      <div [hidden]="!comment.errors.required">
+        <p>Review is required!</p>
+      </div>
+      <div [hidden]="!comment.errors.minlength">
+        <p>Review must be 3 characters long.</p>
+      </div>
+    </div>
+
+    <div class="input-field">
+      <input type="text" name="info.name" required minlength="3" [(ngModel)]="info.name" #yourname="ngModel">
+      <label>Your Name</label>
+    </div>
+
+    <div class="input-field">
+        <span class="labelText">Stars</span>
+        <select class="browser-default" name="info.stars" [(ngModel)]="info.stars">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+    </div>
+
+    <div class="input-field">
+      <textarea class="materialize-textarea" required minlength="3" #comment="ngModel" name="info.comment" [(ngModel)]="info.comment"></textarea>
+      <label>Your review</label>
+    </div>
+    <div class="input-field">
+        <button type="button" class="btn" style="margin-right:5px" *ngIf="!comment.valid || !yourname.valid">Submit</button>
+        <input type="submit" value="Submit" class="btn" style="margin-right:5px" *ngIf="comment.valid && yourname.valid">
+        <button [routerLink]="['/']" class="btn">Cancel</button>
+      </div>
+  </form>
+</div>

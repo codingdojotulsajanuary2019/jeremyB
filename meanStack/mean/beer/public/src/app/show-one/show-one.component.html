@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <h5>Brewed by {{beer.brewer}}</h5>
+    <div class="divider"></div>
+    <div class="col s6">
+      <img src="{{beer.img}}" alt="beer" style="height: 400px">
+    </div>
+    <div class="col s5" style="padding:20px">
+      <h6>Average rating: {{beer.rating}}</h6>
+      <div *ngFor="let rev of beer.review">
+        <div class="divider"></div>
+        <h6>{{rev.comment}}</h6>
+        <h6>{{rev.rate}} stars</h6>
+      </div>
+    </div>
+  </div>
+</div>
